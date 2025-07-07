@@ -179,3 +179,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 >>>>>>> a7756c5 (Initial commit from Create Next App)
+
+certificates
