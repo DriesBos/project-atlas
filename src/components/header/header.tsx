@@ -22,13 +22,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/about" className={styles.navLink}>
-                About
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/contact" className={styles.navLink}>
-                Contact
+              <Link href="/play" className={styles.navLink}>
+                Play
               </Link>
             </li>
           </ul>

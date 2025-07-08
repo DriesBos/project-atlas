@@ -30,13 +30,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className={styles.link}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={styles.link}>
-                  Contact
+                <Link href="/play" className={styles.link}>
+                  play
                 </Link>
               </li>
             </ul>
