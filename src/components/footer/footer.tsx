@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './footer.module.sass';
+import Logo from '@/components/icons/logo';
 
 interface FooterProps {
   className?: string;
@@ -14,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Project Atlas</h3>
+            <Logo />
             <p className={styles.description}>
               Building innovative solutions for the modern web.
             </p>

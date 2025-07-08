@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './header.module.sass';
+import Logo from '@/components/icons/logo';
 
 interface HeaderProps {
   className?: string;
@@ -11,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     <header className={`${styles.header} ${className || ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h1>Project Atlas</h1>
+          <Logo />
         </div>
         <nav className={styles.navigation}>
           <ul className={styles.navList}>
