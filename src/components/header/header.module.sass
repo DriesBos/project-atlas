@@ -1,0 +1,80 @@
+.header
+  width: 100%
+  background-color: #ffffff
+  border-bottom: 1px solid #e5e5e5
+  position: sticky
+  top: 0
+  z-index: 100
+  padding: 1rem 0
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logo
+  h1
+    font-size: 1.5rem
+    font-weight: 600
+    color: #333333
+    margin: 0
+
+.navigation
+  display: flex
+  align-items: center
+
+.navList
+  display: flex
+  list-style: none
+  margin: 0
+  padding: 0
+  gap: 2rem
+
+.navItem
+  margin: 0
+
+.navLink
+  text-decoration: none
+  color: #666666
+  font-weight: 500
+  transition: color 0.2s ease
+  
+  &:hover
+    color: #333333
+  
+  &:focus
+    outline: 2px solid #0070f3
+    outline-offset: 2px
+    border-radius: 4px
+
+// Responsive design
+@media (max-width: 768px)
+  .container
+    padding: 0 0.5rem
+  
+  .navList
+    gap: 1rem
+  
+  .logo h1
+    font-size: 1.25rem
+
+@media (max-width: 480px)
+  .navList
+    flex-direction: column
+    gap: 0.5rem
+  
+  .navigation
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    background-color: #ffffff
+    border-bottom: 1px solid #e5e5e5
+    padding: 1rem
+    display: none
+    
+    &.open
+      display: block
