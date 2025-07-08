@@ -26,12 +26,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <ul className={styles.linkList}>
               <li>
                 <Link href="/" className={styles.link}>
-                  Home
+                  HOME
                 </Link>
               </li>
               <li>
                 <Link href="/play" className={styles.link}>
-                  play
+                  PLAYGROUND
                 </Link>
               </li>
             </ul>

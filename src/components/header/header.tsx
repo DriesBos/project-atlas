@@ -18,12 +18,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <Link href="/" className={styles.navLink}>
-                Home
+                HOME
               </Link>
             </li>
             <li className={styles.navItem}>
               <Link href="/play" className={styles.navLink}>
-                Play
+                PLAYGROUND
               </Link>
             </li>
           </ul>
