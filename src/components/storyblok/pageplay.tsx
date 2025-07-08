@@ -16,7 +16,8 @@ interface PagePlayProps {
 const PagePlay: React.FunctionComponent<PagePlayProps> = ({ blok }) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <h1>PAGE PLAY</h1>
+      <h1>PAGE PLAYGROUND</h1>
+      <div className="pagePlay"></div>
       {blok.body.map((nestedBlok) => (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
