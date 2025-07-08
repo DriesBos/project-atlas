@@ -1,15 +1,29 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
+import { Space_Mono } from 'next/font/google';
+import '@/styles/reset.css';
+import '@/styles/vars.sass';
+import '@/styles/typography.sass';
+import '@/styles/globals.sass';
 import StoryblokProvider from '@/providers/storyblok-provider';
+import Header from '@/components/header/header';
+import Footer from '@/components/footer/footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const spaceMono = Space_Mono({
+  weight: '400',
+  variable: '--font-space-mono',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const roopert = localFont({
+  src: [
+    {
+      path: './../fonts/roobert/RoobertTRIAL-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-roopert',
 });
 
 export const metadata: Metadata = {
@@ -25,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoryblokProvider>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          {children}
+        <body className={`${roopert.variable} ${spaceMono.variable} font-sans`}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </body>
       </StoryblokProvider>
     </html>
