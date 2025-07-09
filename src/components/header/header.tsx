@@ -48,7 +48,8 @@ const Header = ({}) => {
       {
         width: 'auto',
         duration: 1, // Animation duration in seconds
-        ease: 'power2.out', // Ease-out animation
+        ease: 'power1.inOut', // Ease-out animation
+        stagger: 0.165, // 0.33s stagger between each element
         onComplete: () => {
           // After width animation completes, fade in the content
           gsap.set(contentElements, {
@@ -58,7 +59,8 @@ const Header = ({}) => {
           gsap.to(contentElements, {
             opacity: 1,
             duration: 0.66,
-            ease: 'power2.out',
+            ease: 'power1.inOut',
+            stagger: 0.165, // 0.33s stagger for content fade-in too
           });
         },
       }
