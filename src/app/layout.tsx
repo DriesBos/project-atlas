@@ -11,6 +11,7 @@ import Footer from '@/components/footer/footer';
 import ScrollReset from '@/components/scroll-reset';
 import MainScrollTrigger from '@/components/main-scroll-trigger';
 import StaggerAnimation from '@/components/stagger-animation';
+import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
 import SectionOhio from '@/components/section-ohio/section-ohio';
@@ -62,19 +63,21 @@ export default function RootLayout({
     <html lang="en">
       <StoryblokProvider>
         <ThemeStoreProvider>
-          <body className={`${roopert.variable} ${spaceMono.variable}`}>
-            <ScrollReset />
-            <StaggerAnimation />
-            <main>
-              <Header />
-              <Landing />
-              {children}
-              <SectionOhio />
-              <MainScrollTrigger />
-            </main>
-            <div className="footerSpacer" />
-            <Footer />
-          </body>
+          <SectionCounterProvider>
+            <body className={`${roopert.variable} ${spaceMono.variable}`}>
+              <ScrollReset />
+              <StaggerAnimation />
+              <main>
+                <Header />
+                <Landing />
+                {children}
+                <SectionOhio />
+                <MainScrollTrigger />
+              </main>
+              <div className="footerSpacer" />
+              <Footer />
+            </body>
+          </SectionCounterProvider>
         </ThemeStoreProvider>
       </StoryblokProvider>
     </html>

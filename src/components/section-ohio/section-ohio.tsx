@@ -1,4 +1,5 @@
 import styles from './section-ohio.module.sass';
+import { SectionCounter } from '@/components/section-counter';
 
 const SectionOhio = () => {
   return (
@@ -6,7 +7,7 @@ const SectionOhio = () => {
       <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
-          <p>S02</p>
+          <SectionCounter />
         </div>
         <h2>
           Heartland Innovation.
@@ -25,7 +26,7 @@ const SectionOhio = () => {
       <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
-          <p>S03</p>
+          <SectionCounter />
         </div>
         <h2>A Blueprint for America’s Grid</h2>
         <p>
