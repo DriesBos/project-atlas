@@ -1,0 +1,32 @@
+.sectionOhio
+  display: flex
+  border-top: var(--border)
+  min-height: 45vh
+  .column
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    padding: 1rem var(--spacing-sides) 6rem
+    flex: 1
+    &:first-child
+      border-right: var(--border)
+    h2
+      font-size: 1.5rem
+    p
+      font-size: 1rem
+      max-width: 38em
+
+  .topBar
+    display: flex
+    flex-grow: 1
+    align-items: flex-start
+    justify-content: space-between
+    align-items: center
+    // Font
+    p
+      font-family: var(--font-space-mono), monospace
+      font-size: 0.75rem
+      color: currentColor
+      font-weight: 400
+      line-height: 1.4
+      text-transform: uppercase

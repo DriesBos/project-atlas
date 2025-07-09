@@ -12,6 +12,7 @@ import ScrollReset from '@/components/scroll-reset';
 import MainScrollTrigger from '@/components/main-scroll-trigger';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
+import SectionOhio from '@/components/section-ohio/section-ohio';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -66,7 +67,7 @@ export default function RootLayout({
               <Header />
               <Landing />
               {children}
-              <div className="random" />
+              <SectionOhio />
               <MainScrollTrigger />
             </main>
             <div className="footerSpacer" />
