@@ -55,9 +55,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoryblokProvider>
-        <body className={`${roopert.variable} ${spaceMono.variable} font-sans`}>
-          <Header />
-          <main>{children}</main>
+        <body className={`${roopert.variable} ${spaceMono.variable}`}>
+          <main>
+            <Header />
+            {children}
+          </main>
           <Footer />
         </body>
       </StoryblokProvider>
