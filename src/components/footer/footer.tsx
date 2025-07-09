@@ -62,7 +62,7 @@ const Footer = () => {
       <div className={styles.container_bottom}>
         <div className={styles.content}>
           <p className={styles.copyright}>
-            © {currentYear} Project Atlas. All rights reserved.
+            ©{currentYear} Project Atlas. All rights reserved
           </p>
         </div>
       </div>
