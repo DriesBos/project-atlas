@@ -2,32 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
+import IconPlus from '@/components/icons/icon-plus';
 
-interface HeaderProps {
-  className?: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ className }) => {
+const Header = ({}) => {
   return (
-    <header className={`${styles.header} ${className || ''}`}>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <Logo />
-        </div>
-        <nav className={styles.navigation}>
-          <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link href="/" className={styles.navLink}>
-                HOME
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link href="/play" className={styles.navLink}>
-                PLAYGROUND
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <header className={styles.header}>
+      <div className={`${styles.logo} ${styles.block}`}>
+        <Logo />
+      </div>
+      <div className={`${styles.join} ${styles.block}`}>
+        <div>JOIN US</div>
+      </div>
+      <div className={`${styles.nav} ${styles.block}`}>
+        <IconPlus />
       </div>
     </header>
   );

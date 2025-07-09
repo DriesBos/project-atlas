@@ -1,41 +1,35 @@
 .header
-  width: 100%
-  background-color: #ffffff
-  border-bottom: 1px solid #e5e5e5
-  position: sticky
+  position: fixed
   top: 0
-  z-index: 100
-  padding: 1rem 0
-  color: black
-
-.container
-  max-width: 1200px
-  margin: 0 auto
-  padding: 0 1rem
+  left: 0
+  right: 0
   display: flex
   justify-content: space-between
-  align-items: center
+  height: 4rem
+  width: 100%
+  border-bottom: var(--border)
+  position: sticky
+  top: 0
+  z-index: var(--z-header)
+
+  .block
+    border-left: var(--border)
+    display: flex
+    align-items: center
+    padding: 0 var(--spacing-sides)
+    svg, img
+      height: 2rem
+      width: auto
+      cursor: pointer
+    &:first-child
+      border-left: none
 
 .logo
-  h1
-    font-size: 1.5rem
-    font-weight: 600
-    color: #333333
-    margin: 0
+  flex-grow: 1
+  svg
+    height: 2rem
+    width: auto
 
-.navigation
-  display: flex
-  align-items: center
-
-.navList
-  display: flex
-  list-style: none
-  margin: 0
-  padding: 0
-  gap: 2rem
-
-.navItem
-  margin: 0
 
 .navLink
   text-decoration: none
