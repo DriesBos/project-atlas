@@ -33,12 +33,15 @@ const Header = ({}) => {
         width: '0px',
       }, // Starting state
       {
-        width: '10vw',
+        width: 'auto',
         duration: 1, // Animation duration in seconds
         ease: 'power2.out', // Ease-out animation
         onComplete: () => {
           // After width animation completes, fade in the content
-          gsap.set(contentElements, { display: 'block' }); // Ensure content is displayed
+          gsap.set(contentElements, {
+            display: 'inline-block',
+            opacity: 0,
+          }); // Ensure content is displayed
           gsap.to(contentElements, {
             opacity: 1,
             duration: 0.66,
