@@ -1,13 +1,27 @@
-import React from 'react';
+'use client';
+
+import { useCallback } from 'react';
 import Link from 'next/link';
+import { useThemeStore } from '@/providers/theme-store-provider';
 import styles from './footer.module.sass';
 import Logo from '@/components/icons/logo';
 import UserInfo from '@/components/user-info';
 import OhioInfo from '@/components/ohio-info';
 import GetTheme from '@/components/get-theme';
+import type { ThemeState } from '@/store/theme-store';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const theme = useThemeStore((state) => state.theme);
+  const setTheme = useThemeStore((state) => state.setTheme);
+
+  const handleThemeChange = useCallback(() => {
+    const themes: ThemeState[] = ['light', 'dark'];
+    const currentIndex = themes.indexOf(theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+    setTheme(nextTheme);
+  }, [setTheme, theme]);
 
   return (
     <footer className={`${styles.footer} footer`}>
@@ -64,9 +78,16 @@ const Footer = () => {
       </div>
       <div className={styles.container_bottom}>
         <p>©{currentYear} Project Atlas. All rights reserved</p>
-        <p>
-          <GetTheme />
-        </p>
+        <div className={styles.themeSwitcher} onClick={handleThemeChange}>
+          <div
+            className={`${styles.themeIcon} ${
+              theme === 'dark' ? styles.rotated : ''
+            }`}
+          />
+          <p>
+            <GetTheme />
+          </p>
+        </div>
         <p>
           <UserInfo />
         </p>

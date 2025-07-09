@@ -10,6 +10,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import ScrollReset from '@/components/scroll-reset';
 import MainScrollTrigger from '@/components/main-scroll-trigger';
+import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -57,18 +58,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoryblokProvider>
-        <body className={`${roopert.variable} ${spaceMono.variable}`}>
-          <ScrollReset />
-          <main>
-            <Header />
-            <div className="random" />
-            {children}
-            <div className="random" />
-            <MainScrollTrigger />
-          </main>
-          <div className="footerSpacer" />
-          <Footer />
-        </body>
+        <ThemeStoreProvider>
+          <body className={`${roopert.variable} ${spaceMono.variable}`}>
+            <ScrollReset />
+            <main>
+              <Header />
+              <div className="random" />
+              {children}
+              <div className="random" />
+              <MainScrollTrigger />
+            </main>
+            <div className="footerSpacer" />
+            <Footer />
+          </body>
+        </ThemeStoreProvider>
       </StoryblokProvider>
     </html>
   );

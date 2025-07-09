@@ -67,3 +67,31 @@ $border: 1px solid $type-grey
   text-decoration: none
   color: $type-grey
 
+.themeSwitcher
+  cursor: pointer
+  display: flex
+  align-items: center
+  gap: 0.5rem
+
+.themeIcon
+  position: relative
+  width: 1rem
+  height: 1rem
+  border-radius: 1000px
+  border: 1px solid currentColor
+  overflow: hidden
+  transform: rotate(45deg)
+  transition: transform 0.3s ease-in-out
+  &::after
+    content: ''
+    position: absolute
+    width: 0.5rem
+    height: 1rem
+    background: currentColor
+    top: 0
+    right: 0
+  
+  &.rotated
+    transform-origin: center
+    transform: rotate(225deg)
+

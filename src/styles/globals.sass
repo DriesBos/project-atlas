@@ -1,26 +1,22 @@
 html
-  header
-    background: var(--theme-dark-bg)
-    color: var(--theme-dark-type)
-  main
-    background: var(--theme-dark-bg)
-    color: var(--theme-dark-type)
-  footer
-    background: var(--theme-dark-footer-bg)
-    color: var(--theme-dark-footer-type) !important
   &[data-theme='light']
-    background: var(--theme-light-bg)
-    color: var(--theme-main-type)
+    main
+      background: var(--theme-light-bg)
+      color: var(--theme-main-type)
     footer
       background: var(--theme-light-footer-bg)
       color: var(--theme-light-footer-type)
   &[data-theme='dark']
-    background: var(--theme-dark-bg)
-    color: var(--theme-dark-type)
+    main
+      background: var(--theme-dark-bg)
+      color: var(--theme-dark-type)
     footer
       background: var(--theme-dark-footer-bg)
       color: var(--theme-dark-footer-type)
 
+// Transitions
+main, footer
+  transition: background var(--transition-theme), color var(--transition-theme)
  
 body
   position: relative
