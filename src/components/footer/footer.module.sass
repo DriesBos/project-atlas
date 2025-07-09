@@ -17,6 +17,20 @@ $border: 1px solid $type-grey
 .container_top
   padding: 8rem var(--spacing-sides)
 
+.container_bottom
+  border-top: $border
+  padding: 2rem var(--spacing-sides)
+  display: flex
+  justify-content: space-between
+  wrap: nowrap
+  // Font
+  font-family: var(--font-space-mono), monospace
+  font-size: 0.75rem
+  color: currentColor
+  font-weight: 400
+  line-height: 1.4
+  text-transform: uppercase
+
 .content
   display: flex
   justify-content: space-between
@@ -54,14 +68,3 @@ $border: 1px solid $type-grey
   text-decoration: none
   color: $type-grey
 
-.container_bottom
-  border-top: $border
-  padding: 2rem var(--spacing-sides)
-
-  // Font
-  font-family: var(--font-space-mono), monospace
-  font-size: 0.75rem
-  color: currentColor
-  font-weight: 400
-  line-height: 1.4
-  text-transform: uppercase

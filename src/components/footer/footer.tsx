@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './footer.module.sass';
 import Logo from '@/components/icons/logo';
+import UserInfo from '@/components/user-info';
+import OhioInfo from '@/components/ohio-info';
+import GetTheme from '@/components/get-theme';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -60,11 +63,16 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.container_bottom}>
-        <div className={styles.content}>
-          <p className={styles.copyright}>
-            ©{currentYear} Project Atlas. All rights reserved
-          </p>
-        </div>
+        <p>©{currentYear} Project Atlas. All rights reserved</p>
+        <p>
+          <GetTheme />
+        </p>
+        <p>
+          <UserInfo />
+        </p>
+        <p>
+          <OhioInfo />
+        </p>
       </div>
     </footer>
   );
