@@ -29,10 +29,24 @@ export const SectionCounterProvider = ({
     // Get all elements with sectionCounter class in DOM order
     const allSectionElements = document.querySelectorAll('.sectionCounter');
 
-    // Assign numbers starting from S01
+    // Assign numbers starting from S01 with animation
     allSectionElements.forEach((element, index) => {
-      const sectionNumber = `S${(index + 1).toString().padStart(2, '0')}`;
-      element.textContent = sectionNumber;
+      const targetNumber = index + 1;
+
+      // Animation function that counts up from 00 to target
+      const animateCounter = (currentNumber: number) => {
+        const displayNumber = `S${currentNumber.toString().padStart(2, '0')}`;
+        element.textContent = displayNumber;
+
+        if (currentNumber < targetNumber) {
+          setTimeout(() => {
+            animateCounter(currentNumber + 1);
+          }, 330); // 0.33s duration for each count
+        }
+      };
+
+      // Start animation from 00
+      animateCounter(0);
     });
   }, []);
 
@@ -40,9 +54,12 @@ export const SectionCounterProvider = ({
     (element: HTMLElement) => {
       registeredElements.current.add(element);
 
-      // Use a small timeout to ensure all components have mounted
+      // Use a small timeout to ensure all components have mounted, then add delay
       setTimeout(() => {
-        assignSectionNumbers();
+        // Add 0.33s delay before starting the animation
+        setTimeout(() => {
+          assignSectionNumbers();
+        }, 330);
       }, 0);
     },
     [assignSectionNumbers]
