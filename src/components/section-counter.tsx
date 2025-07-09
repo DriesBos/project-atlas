@@ -41,7 +41,7 @@ export const SectionCounterProvider = ({
         if (currentNumber < targetNumber) {
           setTimeout(() => {
             animateCounter(currentNumber + 1);
-          }, 330); // 0.33s duration for each count
+          }, 500); // 0.33s duration for each count
         }
       };
 
@@ -59,7 +59,7 @@ export const SectionCounterProvider = ({
         // Add 0.33s delay before starting the animation
         setTimeout(() => {
           assignSectionNumbers();
-        }, 330);
+        }, 1500);
       }, 0);
     },
     [assignSectionNumbers]
