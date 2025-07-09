@@ -1,6 +1,6 @@
 $max-width: 1200px
-$type-grey: #cccccc
-$border: 1px solid #333333
+$type-grey: #8A8A8A
+$border: 1px solid $type-grey
   
 .footer
   width: 100%
@@ -22,32 +22,30 @@ $border: 1px solid #333333
   flex-direction: column
   align-items: flex-start
   font-size: 1rem
+  gap: 1.5rem
   h2
-    margin-bottom: 1.5rem
+    color: $type-grey
+
+.columnTitle
+  color: $type-grey
+
+.columnLinks
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
 
 .columnOne
   svg, img
-    height: 2rem
+    height: 1.4rem
     width: auto
     cursor: pointer
   p
     font-size: 1.25rem
-
-.linkList
-  list-style: none
-  margin: 0
-  padding: 0
-  
-  li
-    margin-bottom: 0.5rem
+    color: $type-grey
 
 .link
   text-decoration: none
-  transition: color 0.2s ease
-  
-  &:focus
-    outline-offset: 2px
-    border-radius: 4px
+  color: $type-grey
 
 .container_bottom
   border-top: $border

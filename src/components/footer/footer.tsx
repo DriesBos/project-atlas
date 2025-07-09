@@ -16,33 +16,46 @@ const Footer = () => {
           </div>
 
           <div className={styles.column}>
-            <h2 className={styles.sectionTitle}>Site</h2>
-            <Link href="/" className={styles.link}>
-              HOME
-            </Link>
-            <Link href="/play" className={styles.link}>
-              PLAYGROUND
-            </Link>
+            <div className={styles.columnTitle}>
+              <h2>Site</h2>
+            </div>
+            <div className={styles.columnLinks}>
+              <Link href="/" className={styles.link}>
+                Home
+              </Link>
+              <Link href="/play" className={styles.link}>
+                Playground
+              </Link>
+            </div>
           </div>
 
           <div className={styles.column}>
-            <h2 className={styles.sectionTitle}>Site</h2>
-            <Link href="/" className={styles.link}>
-              HOME
-            </Link>
-            <Link href="/play" className={styles.link}>
-              PLAYGROUND
-            </Link>
+            <div className={styles.columnTitle}>
+              <h2>Unite</h2>
+            </div>
+            <div className={styles.columnLinks}>
+              <Link href="/" className={styles.link}>
+                Twitter
+              </Link>
+              <Link href="/play" className={styles.link}>
+                LinkedIn
+              </Link>
+              <p>Subscribe</p>
+            </div>
           </div>
 
           <div className={styles.column}>
-            <h2 className={styles.sectionTitle}>Site</h2>
-            <Link href="/" className={styles.link}>
-              HOME
-            </Link>
-            <Link href="/play" className={styles.link}>
-              PLAYGROUND
-            </Link>
+            <div className={styles.columnTitle}>
+              <h2>Contact</h2>
+            </div>
+            <div className={styles.columnLinks}>
+              <p>info@projectatlas.com</p>
+              <p>
+                2431 Main St, Findlay,
+                <br />
+                Ohio, 45840
+              </p>
+            </div>
           </div>
         </div>
       </div>
