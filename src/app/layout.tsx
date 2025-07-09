@@ -61,8 +61,8 @@ export default function RootLayout({
           <ScrollReset />
           <main>
             <Header />
-            {children}
             <div className="random" />
+            {children}
             <div className="random" />
             <MainScrollTrigger />
           </main>
