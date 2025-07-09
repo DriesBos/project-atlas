@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
 import IconPlus from '@/components/icons/icon-plus';

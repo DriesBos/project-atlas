@@ -9,6 +9,7 @@ import StoryblokProvider from '@/providers/storyblok-provider';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import ScrollReset from '@/components/scroll-reset';
+import MainScrollTrigger from '@/components/main-scroll-trigger';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -63,6 +64,7 @@ export default function RootLayout({
             {children}
             <div className="random" />
             <div className="random" />
+            <MainScrollTrigger />
           </main>
           <div className="footerSpacer" />
           <Footer />

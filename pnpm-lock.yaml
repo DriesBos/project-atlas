@@ -23,6 +23,9 @@ importers:
       '@types/three':
         specifier: ^0.178.0
         version: 0.178.0
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       next:
         specifier: 15.3.5
         version: 15.3.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.2)
