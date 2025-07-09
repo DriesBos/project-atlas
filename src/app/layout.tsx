@@ -8,6 +8,7 @@ import '@/styles/globals.sass';
 import StoryblokProvider from '@/providers/storyblok-provider';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
+import ScrollReset from '@/components/scroll-reset';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -56,10 +57,14 @@ export default function RootLayout({
     <html lang="en">
       <StoryblokProvider>
         <body className={`${roopert.variable} ${spaceMono.variable}`}>
+          <ScrollReset />
           <main>
             <Header />
             {children}
+            <div className="random" />
+            <div className="random" />
           </main>
+          <div className="footerSpacer" />
           <Footer />
         </body>
       </StoryblokProvider>

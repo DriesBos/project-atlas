@@ -12,5 +12,9 @@ export default async function Home({ params }: { params: Params }) {
   const pageData = await fetchStory('published', slug);
   console.log('DYNAMIC PAGE:', pageData);
 
-  return <StoryblokStory story={pageData.story} />;
+  return (
+    <>
+      <StoryblokStory story={pageData.story} />
+    </>
+  );
 }
