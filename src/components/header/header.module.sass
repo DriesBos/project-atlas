@@ -8,9 +8,12 @@
   height: 4rem
   width: 100%
   border-bottom: var(--border)
-  position: sticky
-  top: 0
   z-index: var(--z-header)
+  background: rgba(255, 255, 255, 0.1)
+  backdrop-filter: blur(20px) saturate(180%)
+  -webkit-backdrop-filter: blur(20px) saturate(180%)
+  supports-backdrop-filter: blur(20px)
+  isolation: isolate
 
   .block
     border-left: var(--border)

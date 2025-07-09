@@ -10,6 +10,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import ScrollReset from '@/components/scroll-reset';
 import MainScrollTrigger from '@/components/main-scroll-trigger';
+import StaggerAnimation from '@/components/stagger-animation';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
 import SectionOhio from '@/components/section-ohio/section-ohio';
@@ -63,6 +64,7 @@ export default function RootLayout({
         <ThemeStoreProvider>
           <body className={`${roopert.variable} ${spaceMono.variable}`}>
             <ScrollReset />
+            <StaggerAnimation />
             <main>
               <Header />
               <Landing />

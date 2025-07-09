@@ -3,7 +3,7 @@ import styles from './section-ohio.module.sass';
 const SectionOhio = () => {
   return (
     <section className={styles.sectionOhio}>
-      <div className={styles.column}>
+      <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
           <p>S01</p>
@@ -22,7 +22,7 @@ const SectionOhio = () => {
           We know how to build.
         </p>
       </div>
-      <div className={styles.column}>
+      <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
           <p>S01</p>
