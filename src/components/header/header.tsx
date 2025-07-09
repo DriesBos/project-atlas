@@ -1,14 +1,27 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
 import IconPlus from '@/components/icons/icon-plus';
+import GetTheme from '../get-theme';
+import { useThemeStore } from '@/providers/theme-store-provider';
+import type { ThemeState } from '@/store/theme-store';
 
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
+  const theme = useThemeStore((state) => state.theme);
+  const setTheme = useThemeStore((state) => state.setTheme);
+
+  const handleThemeChange = useCallback(() => {
+    const themes: ThemeState[] = ['light', 'dark'];
+    const currentIndex = themes.indexOf(theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+    setTheme(nextTheme);
+  }, [setTheme, theme]);
 
   useGSAP(() => {
     if (!headerRef.current) return;
@@ -60,7 +73,14 @@ const Header = ({}) => {
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
-        <div className={styles.animateBlockContent}>JOIN US</div>
+        <div className={styles.animateBlockContent} onClick={handleThemeChange}>
+          <GetTheme />
+        </div>
+      </div>
+      <div
+        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+      >
+        <div className={styles.animateBlockContent}>join us</div>
       </div>
       <div
         className={`${styles.nav} ${styles.block} ${styles.animateBlockWidth}`}

@@ -1,5 +1,5 @@
 .header
-  position: fixed
+  position: sticky
   top: 0
   left: 0
   right: 0
@@ -24,6 +24,7 @@
       height: 2rem
       width: auto
       cursor: pointer
+      user-select: none
     &:first-child
       border-left: none
 
@@ -38,6 +39,8 @@
   padding: 0 !important
   display: flex
   justify-content: center
+  cursor: pointer
+  user-select: none
   
 .animateBlockContent
   opacity: 0
