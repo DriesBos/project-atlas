@@ -7,6 +7,7 @@ import styles from './footer.module.sass';
 import Logo from '@/components/icons/logo';
 import UserInfo from '@/components/user-info';
 import OhioInfo from '@/components/ohio-info';
+import ScreenInfo from '@/components/screen-info';
 import GetTheme from '@/components/get-theme';
 import type { ThemeState } from '@/store/theme-store';
 
@@ -78,22 +79,27 @@ const Footer = () => {
       </div>
       <div className={styles.container_bottom}>
         <p>©{currentYear} Project Atlas. All rights reserved</p>
-        <div className={styles.themeSwitcher} onClick={handleThemeChange}>
-          <div
-            className={`${styles.themeIcon} ${
-              theme === 'dark' ? styles.rotated : ''
-            }`}
-          />
-          <p>
-            <GetTheme />
-          </p>
-        </div>
         <p>
           <UserInfo />
         </p>
         <p>
           <OhioInfo />
         </p>
+        <div className={styles.userinfoContainer}>
+          <p>
+            <ScreenInfo />
+          </p>
+          <div className={styles.themeSwitcher} onClick={handleThemeChange}>
+            <div
+              className={`${styles.themeIcon} ${
+                theme === 'dark' ? styles.rotated : ''
+              }`}
+            />
+            <p>
+              <GetTheme />
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
