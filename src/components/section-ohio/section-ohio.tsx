@@ -6,7 +6,7 @@ const SectionOhio = () => {
       <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
-          <p>S01</p>
+          <p>S02</p>
         </div>
         <h2>
           Heartland Innovation.
@@ -25,7 +25,7 @@ const SectionOhio = () => {
       <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.topBar}>
           <p>Ohio Leadership</p>
-          <p>S01</p>
+          <p>S03</p>
         </div>
         <h2>A Blueprint for America’s Grid</h2>
         <p>
