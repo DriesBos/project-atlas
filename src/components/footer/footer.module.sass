@@ -1,35 +1,37 @@
+$max-width: 1200px
+$type-grey: #cccccc
+$border: 1px solid #333333
+  
 .footer
   width: 100%
-  background-color: #1a1a1a
-  color: #ffffff
-  margin-top: auto
-  padding: 3rem 0 1rem 0
+  display: flex
+  flex-direction: column
 
-.container
-  max-width: 1200px
-  margin: 0 auto
-  padding: 0 1rem
+.container_top
+  padding: 8rem var(--spacing-sides)
 
 .content
-  display: grid
-  grid-template-columns: 2fr 1fr 1fr
-  gap: 3rem
-  margin-bottom: 2rem
+  display: flex
+  justify-content: space-between
+  wrap: nowrap
+  max-width: $max-width
+  margin: 0 auto
 
-.section
-  h3, h4
-    margin: 0 0 1rem 0
-    font-weight: 600
+.column
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  font-size: 1rem
+  h2
+    margin-bottom: 1.5rem
 
-.sectionTitle
-  color: #ffffff
-  font-size: 1.25rem
-  margin-bottom: 1rem
-
-.description
-  color: #cccccc
-  line-height: 1.6
-  margin: 0
+.columnOne
+  svg, img
+    height: 2rem
+    width: auto
+    cursor: pointer
+  p
+    font-size: 1.25rem
 
 .linkList
   list-style: none
@@ -40,46 +42,21 @@
     margin-bottom: 0.5rem
 
 .link
-  color: #cccccc
   text-decoration: none
   transition: color 0.2s ease
   
-  &:hover
-    color: #ffffff
-  
   &:focus
-    outline: 2px solid #0070f3
     outline-offset: 2px
     border-radius: 4px
 
-.bottom
-  border-top: 1px solid #333333
-  padding-top: 1rem
+.container_bottom
+  border-top: $border
+  padding: 2rem var(--spacing-sides)
 
-.copyright
-  color: #999999
-  font-size: 0.875rem
-  margin: 0
-  text-align: center
-
-// Responsive design
-@media (max-width: 768px)
-  .content
-    grid-template-columns: 1fr
-    gap: 2rem
-  
-  .footer
-    padding: 2rem 0 1rem 0
-  
-  .container
-    padding: 0 0.5rem
-
-@media (max-width: 480px)
-  .content
-    gap: 1.5rem
-  
-  .footer
-    padding: 1.5rem 0 1rem 0
-  
-  .sectionTitle
-    font-size: 1.125rem
+  // Font
+  font-family: var(--font-space-mono), monospace
+  font-size: 0.75rem
+  color: currentColor
+  font-weight: 400
+  line-height: 1.4
+  text-transform: uppercase
