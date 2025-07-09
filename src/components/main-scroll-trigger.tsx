@@ -24,8 +24,8 @@ export default function MainScrollTrigger() {
       scrub: 0, // Links animation to scroll progress
       animation: gsap.fromTo(
         mainElement,
-        { width: '100vw', borderRadius: '0' }, // Starting state
-        { width: '96vw', borderRadius: '0 0 64px 64px', ease: 'none' } // Ending state
+        { width: '100vw' }, // Starting state
+        { width: '96vw', ease: 'none' } // Ending state
       ),
       markers: false, // Set to true for debugging
     });

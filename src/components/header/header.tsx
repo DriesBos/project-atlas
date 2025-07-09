@@ -75,14 +75,14 @@ const Header = ({}) => {
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
-        <div className={styles.animateBlockContent} onClick={handleThemeChange}>
-          <GetTheme />
-        </div>
+        <div className={styles.animateBlockContent}>join us</div>
       </div>
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
-        <div className={styles.animateBlockContent}>join us</div>
+        <div className={styles.animateBlockContent} onClick={handleThemeChange}>
+          <GetTheme />
+        </div>
       </div>
       <div
         className={`${styles.nav} ${styles.block} ${styles.animateBlockWidth}`}
