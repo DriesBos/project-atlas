@@ -11,6 +11,7 @@ import Footer from '@/components/footer/footer';
 import ScrollReset from '@/components/scroll-reset';
 import MainScrollTrigger from '@/components/main-scroll-trigger';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
+import Landing from '@/components/landing/landing';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -63,7 +64,7 @@ export default function RootLayout({
             <ScrollReset />
             <main>
               <Header />
-              <div className="random" />
+              <Landing />
               {children}
               <div className="random" />
               <MainScrollTrigger />

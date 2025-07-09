@@ -1,0 +1,43 @@
+.landing
+  height: 66vh
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  border-bottom: var(--border)
+
+.circleContainer
+  position: relative
+  width: 22vmin
+  height: 22vmin
+
+.circleItem
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  border-radius: 50%
+  border: 4px solid currentColor
+  perspective: 400px
+  will-change: transform
+
+.spinningX
+  animation: spinX 10s ease-in-out infinite
+  animation-fill-mode: forwards
+  
+.spinningY
+  animation: spinY 9s ease-in-out infinite
+  animation-fill-mode: forwards
+
+@keyframes spinX
+  from
+    transform: rotateX(0deg)
+  to
+    transform: rotateX(390deg)
+
+@keyframes spinY
+  from
+    transform: rotateY(0deg)
+  to
+    transform: rotateY(390deg)
