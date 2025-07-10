@@ -1,11 +1,16 @@
 import styles from './section-numbers.module.sass';
 import SectionNumbersBlock from './block/block';
+import { SectionCounter } from '../section-counter';
 
 const SectionNumbers = () => {
   const animationDuration = 2000; // 2 seconds
 
   return (
     <section className={`${styles.sectionNumbers} animateSectionBlock`}>
+      <div className={styles.sectionCounter}>
+        <p>The Numbers</p>
+        <SectionCounter />
+      </div>
       <div className={styles.column}>
         <SectionNumbersBlock
           number={2.6}

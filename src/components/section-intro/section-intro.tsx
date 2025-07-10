@@ -5,10 +5,15 @@ import Button from '@/components/button/button';
 const SectionIntro = () => {
   return (
     <section className={`${styles.sectionIntro} animateSectionBlock`}>
-      <div className={styles.slogan}>
+      <div className={styles.sectionCounter}>
+        <p>Welcome</p>
         <SectionCounter />
+      </div>
+
+      <div className={styles.slogan}>
         <h2>A New Grid for a New Amerika.</h2>
       </div>
+
       <div className={styles.textContainer}>
         <div className={styles.copy}>
           <p>
@@ -17,6 +22,7 @@ const SectionIntro = () => {
             innovation, collaboration, and the power of the people.
           </p>
         </div>
+
         <div className={styles.buttonContainer}>
           <Button>Join Us</Button>
         </div>
