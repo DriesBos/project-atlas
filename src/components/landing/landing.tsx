@@ -25,7 +25,7 @@ const Landing = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 165); // 0.1s timer
+    }, 1500); // 0.1s timer
 
     return () => clearInterval(interval);
   }, [currentImageIndex]);
