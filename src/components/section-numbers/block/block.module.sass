@@ -1,0 +1,38 @@
+.block
+  padding: 2rem var(--spacing-sides)
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 1rem
+
+  .number
+    &_top
+      display: flex
+      align-items: flex-start
+      gap: 1rem
+      &_left
+        span
+          font-size: 3rem
+          font-family: var(--font-space-mono), monospace
+          line-height: 1
+      &_right
+        p
+          margin-top: .35em
+          color: #ccc
+          font-size: 1rem
+          font-weight: 600
+          text-transform: uppercase
+          letter-spacing: 0.05em
+    &_bottom
+      font-size: 1rem
+      max-width: 16em
+
+  &[data-large='true']
+    gap: 1.5rem
+    .number
+      &_top
+        &_left
+          span
+            font-size: 4.5rem
+      &_bottom
+        font-size: 1.5rem

@@ -16,6 +16,7 @@ import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
 import SectionOhio from '@/components/section-ohio/section-ohio';
 import SectionIntro from '@/components/section-intro/section-intro';
+import SectionNumbers from '@/components/section-numbers/section-numbers';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -72,6 +73,7 @@ export default function RootLayout({
                 <Header />
                 <Landing />
                 <SectionIntro />
+                <SectionNumbers />
                 {children}
                 <SectionOhio />
                 <MainScrollTrigger />
