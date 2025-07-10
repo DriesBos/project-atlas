@@ -10,7 +10,7 @@ export type ThemeStore = {
   theme: ThemeState;
 } & ThemeActions;
 
-export const defaultInitState: ThemeState = 'light';
+export const defaultInitState: ThemeState = 'dark';
 
 export const createThemeStore = (
   initialState: ThemeState = defaultInitState
@@ -21,19 +21,6 @@ export const createThemeStore = (
       set((state) => ({ ...state, theme }));
     },
   }));
-
-  // Check system theme preference if running in browser
-  if (typeof window !== 'undefined') {
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Initial check
-    store.setState({ theme: systemTheme.matches ? 'dark' : 'light' });
-
-    // Listen for changes
-    systemTheme.addEventListener('change', (e) => {
-      store.setState({ theme: e.matches ? 'dark' : 'light' });
-    });
-  }
 
   return store;
 };
