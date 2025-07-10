@@ -1,0 +1,28 @@
+.themeSwitcher
+  cursor: pointer
+  user-select: none
+  display: flex
+  align-items: center
+  gap: 0.5rem
+
+.themeIcon
+  position: relative
+  width: var(--theme-icon-size)
+  height: var(--theme-icon-size)
+  border-radius: 1000px
+  border: 1px solid currentColor
+  overflow: hidden
+  transform: rotate(45deg)
+  transition: transform 0.3s ease-in-out
+  &::after
+    content: ''
+    position: absolute
+    width: calc(#{var(--theme-icon-size)} / 2)
+    height: var(--theme-icon-size)
+    background: currentColor
+    top: 0
+    right: 0
+  
+  &.rotated
+    transform-origin: center
+    transform: rotate(225deg)

@@ -9,6 +9,7 @@ import IconPlus from '@/components/icons/icon-plus';
 import GetTheme from '../get-theme';
 import { useThemeStore } from '@/providers/theme-store-provider';
 import type { ThemeState } from '@/store/theme-store';
+import ThemeIcon from '../theme-icon/theme-icon';
 
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
@@ -81,7 +82,7 @@ const Header = ({}) => {
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
         <div className={styles.animateBlockContent} onClick={handleThemeChange}>
-          <GetTheme />
+          <ThemeIcon />
         </div>
       </div>
       <div
