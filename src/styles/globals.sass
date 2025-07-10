@@ -2,12 +2,15 @@ html
   &[data-theme='light']
     main
       background: var(--theme-light-bg)
-      color: var(--theme-main-type)
+      color: var(--theme-light-type)
     footer
       background: var(--theme-light-footer-bg)
       color: var(--theme-light-footer-type)
     header
       background: rgba(0, 0, 0, 0.05)
+    .button:hover
+      background: var(--theme-light-type)
+      color: var(--theme-light-bg)
   &[data-theme='dark']
     main
       background: var(--theme-dark-bg)
@@ -17,6 +20,9 @@ html
       color: var(--theme-dark-footer-type)
     header
       background: rgba(255, 255, 255, 0.05)
+    .button:hover
+      background: var(--theme-dark-type)
+      color: var(--theme-dark-bg)
 
 // Transitions
 main, footer
@@ -46,3 +52,11 @@ main
 .footerSpacer
   height: 100dvh
   pointer-events: none
+
+.sectionCounter
+  font-family: var(--font-space-mono), monospace
+  font-size: 0.75rem
+  color: currentColor
+  font-weight: 400
+  line-height: 1.4
+  text-transform: uppercase
