@@ -5,7 +5,7 @@ const SectionNumbers = () => {
   const animationDuration = 2000; // 2 seconds
 
   return (
-    <div className={`${styles.sectionNumbers} animateSectionBlock`}>
+    <section className={`${styles.sectionNumbers} animateSectionBlock`}>
       <div className={styles.column}>
         <SectionNumbersBlock
           number={2.6}
@@ -41,7 +41,7 @@ const SectionNumbers = () => {
           animationDuration={animationDuration}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

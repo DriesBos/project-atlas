@@ -48,7 +48,7 @@ const Landing = () => {
   }, [currentImageIndex]);
 
   return (
-    <div className={`${styles.landing} animateSectionBlock`}>
+    <section className={`${styles.landing} animateSectionBlock`}>
       <div className={styles.bottomBar}>
         <p>Atlas Project</p>
         <SectionCounter />
@@ -87,7 +87,7 @@ const Landing = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
