@@ -7,7 +7,7 @@ html
       background: var(--theme-light-footer-bg)
       color: var(--theme-light-footer-type)
     header
-      background: rgba(0, 0, 0, 0.05)
+      background: rgba(0, 0, 0, 0.01)
     .button:hover
       background: var(--theme-light-type)
       color: var(--theme-light-bg)
@@ -19,7 +19,7 @@ html
       background: var(--theme-dark-footer-bg)
       color: var(--theme-dark-footer-type)
     header
-      background: rgba(255, 255, 255, 0.05)
+      background: rgba(255, 255, 255, 0.01)
     .button:hover
       background: var(--theme-dark-type)
       color: var(--theme-dark-bg)
@@ -28,14 +28,17 @@ html
 main, footer
   transition: background var(--transition-theme), color var(--transition-theme)
  
+html, body, main
+  scrollbar-width: none
+  -ms-overflow-style: none
+  &::-webkit-scrollbar, &::-webkit-scrollbar-button
+    display: none
+
 body
   position: relative
   height: 100dvh
   overflow-y: auto
-  overscroll-behavior: none /* Prevents bounce/pull effect */
-  scrollbar-width: none /* Firefox */
-  &::-webkit-scrollbar /* WebKit */
-    display: none
+  overscroll-behavior: none 
 
 main
   position: relative
