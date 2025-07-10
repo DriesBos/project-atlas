@@ -6,7 +6,6 @@ import { gsap } from 'gsap';
 import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
 import IconPlus from '@/components/icons/icon-plus';
-import GetTheme from '../get-theme';
 import { useThemeStore } from '@/providers/theme-store-provider';
 import type { ThemeState } from '@/store/theme-store';
 import ThemeIcon from '../theme-icon/theme-icon';
