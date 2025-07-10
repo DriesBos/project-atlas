@@ -1,6 +1,6 @@
 .sectionNumbers
   display: flex
-  padding: 2rem 0
+  padding: var(--spacing-sections) 0
   & > div:last-child
     display: flex
     flex-wrap: wrap
@@ -14,10 +14,11 @@
 .sectionCounter
   position: absolute
   top: 0
-  right: 0
-  display: inline-flex
+  left: 0
+  width: 100%
+  display: flex
   align-items: flex-start
-  justify-content: flex-end
+  justify-content: space-between
   gap: 2rem
   padding: 1rem var(--spacing-sides )
   // Font
