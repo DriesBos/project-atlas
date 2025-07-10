@@ -12,12 +12,16 @@
   padding: 4rem var(--spacing-sides)
   h2
     font-size: 1.5rem
+  p
+    padding-top: 0.25rem
 
 .textContainer
   display: flex
   flex: 1
   padding: 4rem var(--spacing-sides)
   gap: 2rem
+  @media screen and (max-width: 1400px)
+    flex-direction: column
   
 .copy
   max-width: var(--text-max-width)
