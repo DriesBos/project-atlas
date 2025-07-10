@@ -115,3 +115,18 @@
     
     &.active
       opacity: 1
+
+.progressIndicator
+  position: absolute
+  bottom: 1rem
+  left: var(--spacing-sides)
+  width: 25vw
+  height: 2px
+  background-color: rgba(128, 128, 128, 0.5) // Grey background
+  z-index: 2
+
+.progressBar
+  height: 2px
+  // transform: translateY(-1px)
+  background-color: white
+  transition: width 50ms linear
