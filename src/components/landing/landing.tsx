@@ -81,7 +81,7 @@ const Landing = () => {
           />
         ))}
         <div className={styles.progressIndicator}>
-          <div 
+          <div
             className={styles.progressBar}
             style={{ width: `${progress}%` }}
           />
