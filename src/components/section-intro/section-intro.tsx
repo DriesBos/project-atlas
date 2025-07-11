@@ -6,20 +6,20 @@ const SectionIntro = () => {
   return (
     <section className={`${styles.sectionIntro} animateSectionBlock`}>
       <div className={styles.sectionCounter}>
-        <p>Welcome</p>
+        <p>Hero</p>
         <SectionCounter />
       </div>
 
       <div className={styles.slogan}>
-        <h2>A New Grid for a New Amerika.</h2>
+        <h2>Powering the New American Industrial Base.</h2>
       </div>
 
       <div className={styles.textContainer}>
         <div className={styles.copy}>
           <p>
-            We’re building a new grid for a new Amerika. One that’s faster,
-            cheaper, and more reliable than ever before. One that’s built on
-            innovation, collaboration, and the power of the people.
+            Project ATLAS is a coalition uniting technologists, industrialists,
+            and policymakers to deploy transmission faster than ever before with
+            advanced technologies and customer-led development.
           </p>
         </div>
 

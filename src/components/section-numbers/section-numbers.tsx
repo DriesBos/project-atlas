@@ -24,24 +24,23 @@ const SectionNumbers = () => {
       <div className={styles.column}>
         <SectionNumbersBlock
           number={55}
-          description="New high voltage transmission built in the US in 2023."
+          description="New high voltage transmission built in the US in 2023"
           denominator="miles"
           animationDelay={0}
           animationDuration={animationDuration}
         />
         <SectionNumbersBlock
-          number={28.8}
-          description="Annual cost to consumers from grid congestion in 2022."
+          number={20.8}
+          description=" Annual cost to consumers from grid congestion in 2022"
           denominator="Billion"
           symbol="$"
           animationDelay={0}
           animationDuration={animationDuration}
         />
         <SectionNumbersBlock
-          number={28.8}
-          description="Annual cost to consumers from grid congestion in 2022."
-          denominator="Billion"
-          symbol="$"
+          number={10}
+          description="AAverage timeline for traditional transmission projects"
+          denominator="Years"
           animationDelay={0}
           animationDuration={animationDuration}
         />
