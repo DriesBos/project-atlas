@@ -39,7 +39,7 @@ const SectionNumbers = () => {
         />
         <SectionNumbersBlock
           number={10}
-          description="AAverage timeline for traditional transmission projects"
+          description="Average timeline for traditional transmission projects"
           denominator="Years"
           animationDelay={0}
           animationDuration={animationDuration}
