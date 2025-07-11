@@ -13,7 +13,7 @@ const SectionNumbers = () => {
       </div>
       <div className={styles.column}>
         <SectionNumbersBlock
-          number={2.6}
+          number={2600}
           description="Energy projects waiting for grid connections nationwide"
           denominator="Gigawatts"
           large
