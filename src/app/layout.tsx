@@ -37,7 +37,7 @@ const roopert = localFont({
 
 export const metadata: Metadata = {
   title: 'Atlas Project',
-  description: 'A New Grid for a New Amerika',
+  description: 'Powering the New American Industrial Base.',
   icons: {
     icon: [
       {
