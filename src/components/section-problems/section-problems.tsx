@@ -5,7 +5,7 @@ const SectionProblems = () => {
   return (
     <section className={styles.sectionProblems}>
       <div className={styles.sectionCounter}>
-        <p> Solutions</p>
+        <p>ISSUES</p>
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
