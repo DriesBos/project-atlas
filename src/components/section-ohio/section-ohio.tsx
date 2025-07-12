@@ -5,7 +5,7 @@ const SectionOhio = () => {
   return (
     <section className={styles.sectionOhio}>
       <div className={`${styles.column} animateSectionBlock`}>
-        <div className={styles.topBar}>
+        <div className={styles.sectionCounter}>
           <p>Ohio Leadership</p>
           <SectionCounter />
         </div>
@@ -24,7 +24,7 @@ const SectionOhio = () => {
         </p>
       </div>
       <div className={`${styles.column} animateSectionBlock`}>
-        <div className={styles.topBar}>
+        <div className={styles.sectionCounter}>
           <p>Ohio Leadership</p>
           <SectionCounter />
         </div>

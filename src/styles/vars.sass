@@ -10,14 +10,21 @@ $break-desktop: 1370px
   --color-white: white
   --color-grey: #C7C7C7
   // // Themes
+  --theme-bg: var(--color-black)
+  --theme-type: var(--color-white)
+  --theme-type-secondary: #595959
+  --theme-footer-bg: var(--color-grey)
+  --theme-footer-type: var(--color-black)
   // Light
   --theme-light-bg: var(--color-grey)
   --theme-light-type: var(--color-black)
+  --theme-light-type-secondary: var(--color-grey)
   --theme-light-footer-bg: var(--color-black)
   --theme-light-footer-type: var(--color-white)
   // Dark
   --theme-dark-bg: var(--color-black)
   --theme-dark-type: var(--color-white)
+  --theme-dark-type-secondary: #595959
   --theme-dark-footer-bg: var(--color-grey)
   --theme-dark-footer-type: var(--color-black)
   // Layout
@@ -41,3 +48,16 @@ $break-desktop: 1370px
   --theme-icon-size: 1rem
   header
     --theme-icon-size: 1.75rem
+
+  html[data-theme='light']
+    --theme-bg: var(--theme-light-bg)
+    --theme-type: var(--theme-light-type)
+    --theme-type-secondary: var(--theme-light-type-secondary)
+    --theme-footer-bg: var(--theme-light-footer-bg)
+    --theme-footer-type: var(--theme-light-footer-type)
+  html[data-theme='dark']
+    --theme-bg: var(--theme-dark-bg)
+    --theme-type: var(--theme-dark-type)
+    --theme-type-secondary: var(--theme-dark-type-secondary)
+    --theme-footer-bg: var(--theme-dark-footer-bg)
+    --theme-footer-type: var(--theme-dark-footer-type)
