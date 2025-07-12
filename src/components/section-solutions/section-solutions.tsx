@@ -1,7 +1,21 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import styles from './section-solutions.module.sass';
 import { SectionCounter } from '@/components/section-counter';
 
 const SectionSolutions = () => {
+  const [activeRowIndex, setActiveRowIndex] = useState(0);
+  const totalRows = 4; // Speed, Innovation, Abundance, Security
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveRowIndex((prevIndex) => (prevIndex + 1) % totalRows);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [totalRows]);
+
   return (
     <section className={styles.sectionSolutions}>
       <div className={styles.sectionCounter}>
@@ -16,7 +30,11 @@ const SectionSolutions = () => {
         </h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
-        <div className={styles.columnRow}>
+        <div
+          className={`${styles.columnRow} ${
+            activeRowIndex === 0 ? styles.active : ''
+          }`}
+        >
           <div className={styles.columnSubtitle}>
             <h3>Speed</h3>
           </div>
@@ -27,7 +45,11 @@ const SectionSolutions = () => {
             </p>
           </div>
         </div>
-        <div className={styles.columnRow}>
+        <div
+          className={`${styles.columnRow} ${
+            activeRowIndex === 1 ? styles.active : ''
+          }`}
+        >
           <div className={styles.columnSubtitle}>
             <h3>Innovation</h3>
           </div>
@@ -38,7 +60,11 @@ const SectionSolutions = () => {
             </p>
           </div>
         </div>
-        <div className={styles.columnRow}>
+        <div
+          className={`${styles.columnRow} ${
+            activeRowIndex === 2 ? styles.active : ''
+          }`}
+        >
           <div className={styles.columnSubtitle}>
             <h3>Abundance</h3>
           </div>
@@ -49,7 +75,11 @@ const SectionSolutions = () => {
             </p>
           </div>
         </div>
-        <div className={styles.columnRow}>
+        <div
+          className={`${styles.columnRow} ${
+            activeRowIndex === 3 ? styles.active : ''
+          }`}
+        >
           <div className={styles.columnSubtitle}>
             <h3>Security</h3>
           </div>
