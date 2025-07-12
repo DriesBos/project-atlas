@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import styles from './footer.module.sass';
 import Logo from '@/components/icons/logo';
-import UserInfo from '@/components/user-info';
-import OhioInfo from '@/components/ohio-info';
+import TimeDisplays from '@/components/time-displays/time-displays';
 import ScreenInfo from '@/components/screen-info';
 import ThemeIcon from '@/components/theme-icon/theme-icon';
 
@@ -24,7 +23,7 @@ const Footer = () => {
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
-              <h2>Site</h2>
+              <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
               <Link href="/" className={styles.link}>
@@ -38,7 +37,7 @@ const Footer = () => {
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
-              <h2>Unite</h2>
+              <p>Unite</p>
             </div>
             <div className={styles.columnLinks}>
               <Link href="/" className={styles.link}>
@@ -53,7 +52,7 @@ const Footer = () => {
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
-              <h2>Contact</h2>
+              <p>Contact</p>
             </div>
             <div className={styles.columnLinks}>
               <p>info@projectatlas.com</p>
@@ -68,12 +67,7 @@ const Footer = () => {
       </div>
       <div className={styles.container_bottom}>
         <p>©{currentYear} Project Atlas. All rights reserved</p>
-        <p>
-          <UserInfo />
-        </p>
-        <p>
-          <OhioInfo />
-        </p>
+        <TimeDisplays />
         <div className={styles.userinfoContainer}>
           <p>
             <ScreenInfo />
