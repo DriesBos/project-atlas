@@ -12,7 +12,7 @@ $break-desktop: 1370px
   // // Themes
   --theme-bg: var(--color-black)
   --theme-type: var(--color-white)
-  --theme-type-secondary: #595959
+  --theme-type-secondary: #737373
   --theme-footer-bg: var(--color-grey)
   --theme-footer-type: var(--color-black)
   // Light
@@ -55,9 +55,21 @@ $break-desktop: 1370px
     --theme-type-secondary: var(--theme-light-type-secondary)
     --theme-footer-bg: var(--theme-light-footer-bg)
     --theme-footer-type: var(--theme-light-footer-type)
+    footer
+      --theme-bg: var(--theme-dark-bg)
+      --theme-type: var(--theme-dark-type)
+      --theme-type-secondary: var(--theme-dark-type-secondary)
+      --theme-footer-bg: var(--theme-dark-footer-bg)
+      --theme-footer-type: var(--theme-dark-footer-type)
   html[data-theme='dark']
     --theme-bg: var(--theme-dark-bg)
     --theme-type: var(--theme-dark-type)
     --theme-type-secondary: var(--theme-dark-type-secondary)
     --theme-footer-bg: var(--theme-dark-footer-bg)
     --theme-footer-type: var(--theme-dark-footer-type)
+    footer
+      --theme-bg: var(--theme-light-bg)
+      --theme-type: var(--theme-light-type)
+      --theme-type-secondary: var(--theme-light-type-secondary)
+      --theme-footer-bg: var(--theme-light-footer-bg)
+      --theme-footer-type: var(--theme-light-footer-type)
