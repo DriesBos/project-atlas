@@ -49,7 +49,7 @@ const Landing = () => {
 
   return (
     <section className={`${styles.landing} animateSectionBlock`}>
-      <div className={styles.bottomBar}>
+      <div className={styles.sectionCounter}>
         <p>Atlas Project</p>
         <SectionCounter />
       </div>

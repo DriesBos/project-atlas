@@ -1,2 +1,49 @@
+.sectionProblems
+  display: flex
+  gap: 3rem
+  padding: var(--spacing-sections) var(--spacing-sides)
 
-  
+.columnOne
+  flex: 1
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  flex-grow: 1
+  h2
+    font-size: 2rem
+
+
+.columnTwo
+  flex: 1
+  display: flex
+  flex-grow: 2
+  gap: 3rem
+  & > div
+    display: flex
+    flex-direction: column
+    gap: 2rem
+  h3
+    font-size: 1.5rem
+    font-weight: 400
+  p
+    font-size: 1rem
+
+
+.sectionCounter
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  display: flex
+  flex-grow: 1
+  align-items: flex-start
+  justify-content: space-between
+  padding: 1rem var(--spacing-sides)
+  // Font
+  p
+    font-family: var(--font-space-mono), monospace
+    font-size: 0.75rem
+    color: var(--theme-type-secondary)
+    font-weight: 400
+    line-height: 1.4
+    text-transform: uppercase
