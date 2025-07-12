@@ -39,14 +39,32 @@ export const SectionCounterProvider = ({
         element.textContent = displayNumber;
 
         if (currentNumber < targetNumber) {
+          // Calculate delay based on total duration divided by number of steps
+          const totalDuration = 1500; // 2 seconds total
+          const stepDelay = totalDuration / targetNumber;
+
           setTimeout(() => {
             animateCounter(currentNumber + 1);
-          }, 500); // 0.33s duration for each count
+          }, stepDelay);
         }
       };
 
-      // Start animation from 00
-      animateCounter(0);
+      // Set up IntersectionObserver for each element
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            // Start animation from 00 when element comes into view
+            animateCounter(0);
+            observer.disconnect(); // Stop observing after animation starts
+          }
+        },
+        {
+          threshold: 1, // Trigger when 100% of the element is visible
+          rootMargin: '0px', // No margin
+        }
+      );
+
+      observer.observe(element);
     });
   }, []);
 
@@ -54,12 +72,9 @@ export const SectionCounterProvider = ({
     (element: HTMLElement) => {
       registeredElements.current.add(element);
 
-      // Use a small timeout to ensure all components have mounted, then add delay
+      // Use a small timeout to ensure all components have mounted
       setTimeout(() => {
-        // Add 0.33s delay before starting the animation
-        setTimeout(() => {
-          assignSectionNumbers();
-        }, 1500);
+        assignSectionNumbers();
       }, 0);
     },
     [assignSectionNumbers]

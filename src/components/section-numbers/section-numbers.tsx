@@ -3,12 +3,12 @@ import SectionNumbersBlock from './block/block';
 import { SectionCounter } from '../section-counter';
 
 const SectionNumbers = () => {
-  const animationDuration = 2000; // 2 seconds
+  const animationDuration = 1500; // 2 seconds
 
   return (
     <section className={`${styles.sectionNumbers} animateSectionBlock`}>
       <div className={styles.sectionCounter}>
-        <p>The Numbers</p>
+        <p>Figures</p>
         <SectionCounter />
       </div>
       <div className={styles.column}>
