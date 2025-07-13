@@ -19,6 +19,8 @@ import SectionIntro from '@/components/section-intro/section-intro';
 import SectionNumbers from '@/components/section-numbers/section-numbers';
 import SectionProblems from '@/components/section-problems/section-problems';
 import SectionSolutions from '@/components/section-solutions/section-solutions';
+import SectionMail from '@/components/section-mail/section-mail';
+import FooterSpacer from '@/components/footer-spacer';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -80,9 +82,10 @@ export default function RootLayout({
                 <SectionSolutions />
                 {children}
                 <SectionOhio />
+                <SectionMail />
                 <MainScrollTrigger />
               </main>
-              <div className="footerSpacer" />
+              <FooterSpacer />
               <Footer />
             </body>
           </SectionCounterProvider>

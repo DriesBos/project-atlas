@@ -1,4 +1,5 @@
 html
+  background: var(--theme-light-bg)
   main, section
     background: var(--theme-dark-bg)
     color: var(--theme-dark-type)
@@ -11,6 +12,7 @@ html
     background: var(--theme-dark-type)
     color: var(--theme-dark-bg)
   &[data-theme='light']
+    background: var(--theme-dark-bg)
     main, section
       background: var(--theme-light-bg)
       color: var(--theme-light-type)
@@ -23,6 +25,7 @@ html
       background: var(--theme-light-type)
       color: var(--theme-light-bg)
   &[data-theme='dark']
+    background: var(--theme-light-bg)
     main
       background: var(--theme-dark-bg)
       color: var(--theme-dark-type)
@@ -67,7 +70,7 @@ section
   will-change: opacity
 
 .footerSpacer
-  height: 100dvh
+  height: 0
   pointer-events: none
 
 .sectionCounter

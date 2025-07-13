@@ -25,7 +25,7 @@ export default function MainScrollTrigger() {
       animation: gsap.fromTo(
         mainElement,
         { width: '100vw' }, // Starting state
-        { width: '96vw', ease: 'none' } // Ending state
+        { width: 'calc(100% - 4rem)', ease: 'none' } // Ending state
       ),
       markers: false, // Set to true for debugging
     });

@@ -6,14 +6,12 @@ import Logo from '@/components/icons/logo';
 import TimeDisplays from '@/components/time-displays/time-displays';
 import ScreenInfo from '@/components/screen-info';
 import ThemeIcon from '@/components/theme-icon/theme-icon';
-import SectionMail from '@/components/section-mail/section-mail';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className={`${styles.footer} footer`} id="footer">
-      <SectionMail />
       <div className={styles.container_top}>
         <div className={styles.content}>
           <div className={`${styles.columnOne} ${styles.column}`}>
