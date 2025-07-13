@@ -1,4 +1,4 @@
-import Subscribe from '../subscribe/subscribe';
+import { Subscribe } from '../subscribe/subscribe';
 import styles from './section-mail.module.sass';
 
 const SectionMail = () => {
