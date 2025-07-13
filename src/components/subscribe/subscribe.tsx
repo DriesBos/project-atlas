@@ -3,7 +3,12 @@ import styles from './subscribe.module.sass';
 const Subscribe = () => {
   return (
     <section className={`${styles.subscribe}`}>
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="POST"
+        action="/pages/success"
+        data-netlify="true"
+      >
         <p>
           <label>
             Your Name: <input type="text" name="name" />
