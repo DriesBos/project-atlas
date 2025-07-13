@@ -43,14 +43,6 @@ const Header = ({}) => {
     }
   }, []);
 
-  const handleScrollToEnd = useCallback(() => {
-    // Scroll to the bottom of the page
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth',
-    });
-  }, []);
-
   // IntersectionObserver to track when sections are in view
   useEffect(() => {
     const sectionIds = [
@@ -59,6 +51,7 @@ const Header = ({}) => {
       'sectionProblems',
       'sectionSolutions',
       'sectionOhio',
+      'sectionMail',
     ];
     const observers: IntersectionObserver[] = [];
 
@@ -206,9 +199,14 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+        className={`${styles.join} ${styles.block} ${
+          styles.animateBlockWidth
+        } ${activeSections.has('sectionMail') ? styles.active : ''}`}
       >
-        <div className={styles.animateBlockContent} onClick={handleScrollToEnd}>
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('sectionMail')}
+        >
           <p>join us</p>
         </div>
       </div>
