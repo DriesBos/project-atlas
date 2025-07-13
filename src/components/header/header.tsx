@@ -44,6 +44,14 @@ const Header = ({}) => {
     }
   }, []);
 
+  const handleScrollToEnd = useCallback(() => {
+    // Scroll to the bottom of the page
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, []);
+
   // IntersectionObserver to track when Ohio section is in view
   useEffect(() => {
     const ohioSection = document.querySelector('#sectionOhio');
@@ -171,10 +179,7 @@ const Header = ({}) => {
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
-        <div
-          className={styles.animateBlockContent}
-          onClick={() => handleScrollToSection('footer')}
-        >
+        <div className={styles.animateBlockContent} onClick={handleScrollToEnd}>
           <p>join us</p>
         </div>
       </div>
