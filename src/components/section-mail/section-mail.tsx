@@ -3,7 +3,10 @@ import styles from './section-mail.module.sass';
 
 const SectionMail = () => {
   return (
-    <section className={`${styles.sectionMail} animateSectionBlock`}>
+    <section
+      className={`${styles.sectionMail} animateSectionBlock`}
+      id="sectionMail"
+    >
       <Subscribe />
     </section>
   );

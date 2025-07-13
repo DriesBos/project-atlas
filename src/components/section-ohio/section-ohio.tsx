@@ -3,7 +3,7 @@ import { SectionCounter } from '@/components/section-counter';
 
 const SectionOhio = () => {
   return (
-    <section className={styles.sectionOhio}>
+    <section className={styles.sectionOhio} id="sectionOhio">
       <div className={`${styles.column} animateSectionBlock`}>
         <div className={styles.sectionCounter}>
           <p>Ohio Leadership</p>
