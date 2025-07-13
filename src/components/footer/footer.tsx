@@ -12,7 +12,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`${styles.footer} footer`}>
+    <footer className={`${styles.footer} footer`} id="footer">
       <SectionMail />
       <div className={styles.container_top}>
         <div className={styles.content}>

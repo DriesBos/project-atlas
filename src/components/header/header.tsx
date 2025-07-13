@@ -24,18 +24,14 @@ const Header = ({}) => {
     setTheme(nextTheme);
   }, [setTheme, theme]);
 
-  const handleScrollToOhio = useCallback(() => {
+  const handleScrollToSection = useCallback((sectionId: string) => {
     const bodyElement = document.body;
-    const ohioSection = document.querySelector('#sectionOhio') as HTMLElement;
+    const targetSection = document.querySelector(
+      `#${sectionId}`
+    ) as HTMLElement;
 
-    console.log('Body element found:', bodyElement);
-    console.log('Ohio section found:', ohioSection);
-
-    if (bodyElement && ohioSection) {
-      console.log('Scrolling to Ohio section...');
-      const offsetTop = ohioSection.offsetTop;
-      console.log('Offset top:', offsetTop);
-      console.log('Body current scrollTop:', bodyElement.scrollTop);
+    if (bodyElement && targetSection) {
+      const offsetTop = targetSection.offsetTop;
 
       // Try scrolling the body instead of main
       bodyElement.scrollTop = offsetTop;
@@ -45,8 +41,6 @@ const Header = ({}) => {
         top: offsetTop,
         behavior: 'smooth',
       });
-    } else {
-      console.log('Body or Ohio section not found');
     }
   }, []);
 
@@ -123,21 +117,66 @@ const Header = ({}) => {
         <Logo />
       </div>
       <div
+        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+      >
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('sectionIntro')}
+        >
+          <p>Welcome</p>
+        </div>
+      </div>
+      <div
+        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+      >
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('sectionNumbers')}
+        >
+          <p>figures</p>
+        </div>
+      </div>
+      <div
+        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+      >
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('sectionProblems')}
+        >
+          <p>issues</p>
+        </div>
+      </div>
+      <div
+        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+      >
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('sectionSolutions')}
+        >
+          <p>solutions</p>
+        </div>
+      </div>
+      <div
         className={`${styles.join} ${styles.block} ${
           styles.animateBlockWidth
         } ${isOhioInView ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
-          onClick={handleScrollToOhio}
+          onClick={() => handleScrollToSection('sectionOhio')}
         >
-          TEST
+          <p>Ohio Leadership</p>
         </div>
       </div>
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
       >
-        <div className={styles.animateBlockContent}>join us</div>
+        <div
+          className={styles.animateBlockContent}
+          onClick={() => handleScrollToSection('footer')}
+        >
+          <p>join us</p>
+        </div>
       </div>
       <div
         className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}

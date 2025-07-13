@@ -4,7 +4,10 @@ import Button from '@/components/button/button';
 
 const SectionIntro = () => {
   return (
-    <section className={`${styles.sectionIntro} animateSectionBlock`}>
+    <section
+      className={`${styles.sectionIntro} animateSectionBlock`}
+      id="sectionIntro"
+    >
       <div className={styles.sectionCounter}>
         <p>Hero</p>
         <SectionCounter />

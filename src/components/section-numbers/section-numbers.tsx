@@ -6,7 +6,10 @@ const SectionNumbers = () => {
   const animationDuration = 1500; // 2 seconds
 
   return (
-    <section className={`${styles.sectionNumbers} animateSectionBlock`}>
+    <section
+      className={`${styles.sectionNumbers} animateSectionBlock`}
+      id="sectionNumbers"
+    >
       <div className={styles.sectionCounter}>
         <p>Figures</p>
         <SectionCounter />

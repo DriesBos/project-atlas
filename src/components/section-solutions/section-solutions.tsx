@@ -17,7 +17,7 @@ const SectionSolutions = () => {
   }, [totalRows]);
 
   return (
-    <section className={styles.sectionSolutions}>
+    <section className={styles.sectionSolutions} id="sectionSolutions">
       <div className={styles.sectionCounter}>
         <p> Solutions</p>
         <SectionCounter />
