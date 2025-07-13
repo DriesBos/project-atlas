@@ -26,6 +26,7 @@
       color: var(--theme-type-secondary)
       line-height: 1.4
       text-transform: uppercase
+      transition: color var(--transition-general)
     svg, img
       height: var(--icon-large)
       width: auto
@@ -53,4 +54,6 @@
   padding: 0 var(--spacing-sides) 
 
 .active
-  background: var(--theme-type-secondary)
+  color: var(--theme-type)
+  p
+    color: var(--theme-type) !important

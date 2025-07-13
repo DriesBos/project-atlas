@@ -12,7 +12,7 @@ import ThemeIcon from '../theme-icon/theme-icon';
 
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
-  const [isOhioInView, setIsOhioInView] = useState(false);
+  const [activeSections, setActiveSections] = useState<Set<string>>(new Set());
   const theme = useThemeStore((state) => state.theme);
   const setTheme = useThemeStore((state) => state.setTheme);
 
@@ -52,26 +52,48 @@ const Header = ({}) => {
     });
   }, []);
 
-  // IntersectionObserver to track when Ohio section is in view
+  // IntersectionObserver to track when sections are in view
   useEffect(() => {
-    const ohioSection = document.querySelector('#sectionOhio');
+    const sectionIds = [
+      'sectionIntro',
+      'sectionNumbers',
+      'sectionProblems',
+      'sectionSolutions',
+      'sectionOhio',
+    ];
+    const observers: IntersectionObserver[] = [];
 
-    if (!ohioSection) return;
+    sectionIds.forEach((sectionId) => {
+      const section = document.querySelector(`#${sectionId}`);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsOhioInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1, // Trigger when 10% of the section is visible
-        rootMargin: '0px',
-      }
-    );
+      if (!section) return;
 
-    observer.observe(ohioSection);
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setActiveSections((prev) => {
+            const newSet = new Set(prev);
+            if (entry.isIntersecting) {
+              // Add active class when section is visible
+              newSet.add(sectionId);
+            } else {
+              // Remove active class when section goes out of view (100px from top)
+              newSet.delete(sectionId);
+            }
+            return newSet;
+          });
+        },
+        {
+          threshold: [0.1, 0.9], // Trigger at both entry and exit points
+          rootMargin: '-100px 0px -100px 0px', // Remove active class when 100px from top
+        }
+      );
+
+      observer.observe(section);
+      observers.push(observer);
+    });
 
     return () => {
-      observer.disconnect();
+      observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
@@ -125,7 +147,9 @@ const Header = ({}) => {
         <Logo />
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+        className={`${styles.join} ${styles.block} ${
+          styles.animateBlockWidth
+        } ${activeSections.has('sectionIntro') ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
@@ -135,7 +159,9 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+        className={`${styles.join} ${styles.block} ${
+          styles.animateBlockWidth
+        } ${activeSections.has('sectionNumbers') ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
@@ -145,7 +171,9 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+        className={`${styles.join} ${styles.block} ${
+          styles.animateBlockWidth
+        } ${activeSections.has('sectionProblems') ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
@@ -155,7 +183,9 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${styles.animateBlockWidth}`}
+        className={`${styles.join} ${styles.block} ${
+          styles.animateBlockWidth
+        } ${activeSections.has('sectionSolutions') ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
@@ -167,7 +197,7 @@ const Header = ({}) => {
       <div
         className={`${styles.join} ${styles.block} ${
           styles.animateBlockWidth
-        } ${isOhioInView ? styles.active : ''}`}
+        } ${activeSections.has('sectionOhio') ? styles.active : ''}`}
       >
         <div
           className={styles.animateBlockContent}
