@@ -220,13 +220,13 @@ const Header = ({}) => {
           <ThemeIcon />
         </div>
       </div>
-      <div
+      {/* <div
         className={`${styles.nav} ${styles.block} ${styles.animateBlockWidth}`}
       >
         <div className={styles.animateBlockContent}>
           <IconPlus />
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
