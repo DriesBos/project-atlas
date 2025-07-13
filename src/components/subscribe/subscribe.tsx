@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './subscribe.module.sass';
 
 const Subscribe = () => {
