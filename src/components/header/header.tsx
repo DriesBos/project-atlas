@@ -139,7 +139,7 @@ const Header = ({}) => {
         <Logo />
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionIntro') ? styles.active : ''}`}
       >
@@ -151,7 +151,7 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionNumbers') ? styles.active : ''}`}
       >
@@ -163,7 +163,7 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionProblems') ? styles.active : ''}`}
       >
@@ -175,7 +175,7 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionSolutions') ? styles.active : ''}`}
       >
@@ -187,7 +187,7 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionOhio') ? styles.active : ''}`}
       >
@@ -199,7 +199,7 @@ const Header = ({}) => {
         </div>
       </div>
       <div
-        className={`${styles.join} ${styles.block} ${
+        className={`${styles.join} ${styles.block} ${styles.desktop} ${
           styles.animateBlockWidth
         } ${activeSections.has('sectionMail') ? styles.active : ''}`}
       >
