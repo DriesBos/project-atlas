@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import styles from './footer.module.sass';
 import Logo from '@/components/icons/logo';
 import TimeDisplays from '@/components/time-displays/time-displays';
@@ -40,12 +39,20 @@ const Footer = () => {
               <p>Unite</p>
             </div>
             <div className={styles.columnLinks}>
-              <Link href="/" className={styles.link}>
-                Twitter
-              </Link>
-              <Link href="/play" className={styles.link}>
+              <a
+                className={styles.link}
+                target="_blank"
+                href="https://www.linkedin.com/in/andrew-burchwell-a7284994/"
+              >
                 LinkedIn
-              </Link>
+              </a>
+              <a
+                className={styles.link}
+                target="_blank"
+                href="https://x.com/AndrewBurchwell"
+              >
+                Twitter
+              </a>
             </div>
           </div>
 
@@ -54,11 +61,13 @@ const Footer = () => {
               <p>Contact</p>
             </div>
             <div className={styles.columnLinks}>
-              <p>info@projectatlas.com</p>
+              <a href="mailto:americantransmission@protonmail.com">
+                americantransmission@protonmail.com
+              </a>
               <p>
-                2431 Main St, Findlay,
+                34 S. 3rd St., Suite 100,
                 <br />
-                Ohio, 45840
+                Columbus, OH 43215
               </p>
             </div>
           </div>

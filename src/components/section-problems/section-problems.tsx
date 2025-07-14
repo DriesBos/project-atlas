@@ -10,7 +10,8 @@ const SectionProblems = () => {
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
         <h2>
-          America's Prosperity and Security Depends on How We Move Electrons.
+          America&#39;s Prosperity and Security Depends on How We Move
+          Electrons.
         </h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
