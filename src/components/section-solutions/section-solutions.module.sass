@@ -2,11 +2,15 @@
   display: flex
   gap: 3rem
   padding: var(--spacing-sections) var(--spacing-sides)
+  @media screen and (max-width: 770px)
+    flex-direction: column
 
   .column
     flex: 1
     h2
       font-size: 2rem
+      @media screen and (min-width: 770px)
+        max-width: 10em
     h3
       font-size: 1rem
     p
@@ -15,6 +19,8 @@
       line-height: 1.4
       max-width: 24em
       width: 100%
+      @media screen and (max-width: 770px)
+        max-width: unset
     .active
       p, h3
         color: var(--theme-type)
@@ -24,12 +30,16 @@
     justify-content: flex-start
     align-items: flex-start
     flex-grow: 1
+    @media screen and (max-width: 1100px)
+      flex-grow: unset
 
   .columnTwo
     display: flex
     flex-direction: column
     gap: 3rem
     flex-grow: 2
+    @media screen and (max-width: 1100px)
+      gap: 2rem
 
   .columnRow
     display: flex
@@ -39,8 +49,17 @@
     p, h3
       color: var(--theme-type-secondary)
       transition: color 0.33s ease-in-out
+    @media screen and (max-width: 770px)
+      h3
+        width: 100%
+        min-width: 8em
+    @media screen and (min-width: 500px)
+      h3
+        min-width: 5.1em
     & > div 
       flex: 1
+      @media screen and (max-width: 770px)
+        flex: unset
     &.active
       p, h3
         color: currentColor

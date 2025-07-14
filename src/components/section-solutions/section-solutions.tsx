@@ -23,11 +23,7 @@ const SectionSolutions = () => {
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
-        <h2>
-          Innovative
-          <br />
-          Solutions
-        </h2>
+        <h2>Innovative Solutions</h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
         <div

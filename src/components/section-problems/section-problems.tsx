@@ -9,11 +9,7 @@ const SectionProblems = () => {
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
-        <h2>
-          Pressing
-          <br />
-          Problems
-        </h2>
+        <h2>Pressing Problems</h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
         <div className={styles.columnTwoOne}>
