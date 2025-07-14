@@ -8,7 +8,9 @@ const SectionOhio = () => {
         <p>Ohio Leadership</p>
         <SectionCounter />
       </div>
-      <div className={`${styles.column} animateSectionBlock`}>
+      <div
+        className={`${styles.column} ${styles.columnOne} animateSectionBlock`}
+      >
         <div className={`${styles.sectionCounter} ${styles.desktop}`}>
           <p>Ohio Leadership</p>
           <SectionCounter />
@@ -27,7 +29,9 @@ const SectionOhio = () => {
           We know how to build.
         </p>
       </div>
-      <div className={`${styles.column} animateSectionBlock`}>
+      <div
+        className={`${styles.column} ${styles.columnTwo} animateSectionBlock`}
+      >
         <div className={`${styles.sectionCounter} ${styles.desktop}`}>
           <p>Ohio Leadership</p>
           <SectionCounter />
