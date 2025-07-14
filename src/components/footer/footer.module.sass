@@ -17,10 +17,11 @@
 
 .container_bottom
   border-top: var(--border)
-  padding: 2rem var(--spacing-sides)
+  padding: var(--spacing-sides) var(--spacing-sides)
   display: flex
   justify-content: space-between
   wrap: nowrap
+  gap: 2rem
   p
     font-family: var(--font-space-mono), monospace
     font-size: 0.75rem
@@ -32,8 +33,6 @@
     align-items: center
     gap: 2rem
   @media screen and ( max-width: 775px)
-    .copyright
-      max-width: 13em
     .screenres
       display: none
   @media screen and ( max-width: 550px)

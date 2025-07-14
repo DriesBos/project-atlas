@@ -14,10 +14,14 @@
   -webkit-backdrop-filter: blur(10px) saturate(180%)
   supports-backdrop-filter: blur(10px)
   isolation: isolate
+  padding: var(--spacing-sides) var(--spacing-sides)
   & > div:first-child
     padding-left: var(--spacing-sides) !important
   & > div:last-child
     padding-right: var(--spacing-sides) !important
+  @media  screen and ( max-width: 770px )
+    height: auto
+    padding: var(--spacing-sides) var(--spacing-sides)
 
   .block
     // border-left: var(--border)
