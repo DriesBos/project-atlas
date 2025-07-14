@@ -9,6 +9,7 @@ interface SectionNumbersBlockProps {
   large?: boolean;
   animationDelay?: number;
   animationDuration?: number;
+  className?: string;
 }
 
 const SectionNumbersBlock: React.FunctionComponent<
@@ -21,12 +22,16 @@ const SectionNumbersBlock: React.FunctionComponent<
   large,
   animationDelay = 0,
   animationDuration = 2000,
+  className,
 }) => {
   const numericValue = typeof number === 'string' ? parseFloat(number) : number;
   const shouldAnimate = typeof number === 'number' || !isNaN(numericValue);
 
   return (
-    <div className={styles.block} data-large={large ? true : false}>
+    <div
+      className={`${styles.block} ${className || ''}`}
+      data-large={large ? true : false}
+    >
       <div className={styles.number_top}>
         <div className={styles.number_top_left}>
           {shouldAnimate ? (

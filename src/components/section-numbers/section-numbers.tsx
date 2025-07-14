@@ -14,7 +14,7 @@ const SectionNumbers = () => {
         <p>Figures</p>
         <SectionCounter />
       </div>
-      <div className={styles.column}>
+      <div className={`${styles.column} ${styles.columnOne} ${styles.desktop}`}>
         <SectionNumbersBlock
           number={2600}
           description="Energy projects waiting for grid connections nationwide"
@@ -24,7 +24,16 @@ const SectionNumbers = () => {
           animationDuration={animationDuration}
         />
       </div>
-      <div className={styles.column}>
+      <div className={`${styles.column} ${styles.columnTwo}`}>
+        <SectionNumbersBlock
+          number={2600}
+          description="Energy projects waiting for grid connections nationwide"
+          denominator="Gigawatts"
+          large
+          animationDelay={0}
+          animationDuration={animationDuration}
+          className={styles.mobile}
+        />
         <SectionNumbersBlock
           number={55}
           description="New high voltage transmission built in the US in 2023"

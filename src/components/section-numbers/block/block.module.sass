@@ -27,11 +27,12 @@
       max-width: 16em
 
   &[data-large='true']
-    gap: 1.5rem
-    .number
-      &_top
-        &_left
-          span
-            font-size: 4.5rem
-      &_bottom
-        font-size: 1.5rem
+    @media screen and (min-width: 950px)
+      gap: 1.5rem
+      .number
+        &_top
+          &_left
+            span
+              font-size: 4.5rem
+        &_bottom
+          font-size: 1.5rem
