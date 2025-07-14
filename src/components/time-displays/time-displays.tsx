@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from 'react';
 
-export default function TimeDisplays() {
+interface TimeDisplaysProps {
+  className?: string;
+}
+
+export default function TimeDisplays({ className }: TimeDisplaysProps) {
   const [userTime, setUserTime] = useState<string>('');
   const [userLocation, setUserLocation] = useState<string>('');
   const [ohioTime, setOhioTime] = useState<string>('');
@@ -62,7 +66,7 @@ export default function TimeDisplays() {
   }, []);
 
   return (
-    <div>
+    <div className={className}>
       <p>
         {userTime && userLocation && `${userTime} ${userLocation}`} ——{' '}
         {ohioTime && `${ohioTime} Ohio`}
