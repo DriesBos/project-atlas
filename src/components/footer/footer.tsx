@@ -5,9 +5,15 @@ import Logo from '@/components/icons/logo';
 import TimeDisplays from '@/components/time-displays/time-displays';
 import ScreenInfo from '@/components/screen-info';
 import ThemeIcon from '@/components/theme-icon/theme-icon';
+import { useCallback } from 'react';
+import { scrollToSection } from '@/utils/scrollToSection';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const handleScrollToSection = useCallback((sectionId: string) => {
+    scrollToSection(sectionId);
+  }, []);
 
   return (
     <footer className={`${styles.footer} footer`} id="footer">
@@ -25,12 +31,20 @@ const Footer = () => {
               <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
-              <p>about</p>
-              <p>data</p>
-              <p>Issues</p>
-              <p>Solutions</p>
-              <p>Ohio</p>
-              <p>Join Us</p>
+              <p onClick={() => handleScrollToSection('sectionIntro')}>About</p>
+              <p onClick={() => handleScrollToSection('sectionNumbers')}>
+                Data
+              </p>
+              <p onClick={() => handleScrollToSection('sectionProblems')}>
+                Issues
+              </p>
+              <p onClick={() => handleScrollToSection('sectionSolutions')}>
+                Solutions
+              </p>
+              <p onClick={() => handleScrollToSection('sectionOhio')}>Ohio</p>
+              <p onClick={() => handleScrollToSection('sectionMail')}>
+                Join Us
+              </p>
             </div>
           </div>
 
