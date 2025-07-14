@@ -16,6 +16,10 @@ export default function MainScrollTrigger() {
 
     if (!mainElement || !triggerRef.current) return;
 
+    // Determine ending width based on window size
+    const endingWidth =
+      window.innerWidth < 770 ? 'calc(100% - 2rem)' : 'calc(100% - 4rem)';
+
     // Create ScrollTrigger with scrub animation tied to scroll progress
     ScrollTrigger.create({
       trigger: triggerRef.current,
@@ -25,7 +29,7 @@ export default function MainScrollTrigger() {
       animation: gsap.fromTo(
         mainElement,
         { width: '100vw' }, // Starting state
-        { width: 'calc(100% - 4rem)', ease: 'none' } // Ending state
+        { width: endingWidth, ease: 'none' } // Ending state
       ),
       markers: false, // Set to true for debugging
     });
