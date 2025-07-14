@@ -11,7 +11,7 @@
 
 .container_top
   padding: 9rem var(--spacing-sides)
-  @media screen and ( max-width: 775px)
+  @media screen and ( max-width: 770px)
     padding: var(--spacing-sections) var(--spacing-sides)
 
 
@@ -32,7 +32,7 @@
     display: flex
     align-items: center
     gap: 2rem
-  @media screen and ( max-width: 775px)
+  @media screen and ( max-width: 770px)
     .screenres
       display: none
   @media screen and ( max-width: 550px)
@@ -47,8 +47,9 @@
   margin: 0 auto
   max-width: 1400px
   gap: 3rem
-  @media screen and ( max-width: 775px)
+  @media screen and ( max-width: 770px)
     justify-content: flex-start
+    gap: 2rem
 
 .column
   display: flex
@@ -56,6 +57,8 @@
   align-items: flex-start
   font-size: 1rem
   gap: 1.5rem
+  @media screen and ( max-width: 770px)
+    gap: 0.75rem
 
 .columnTitle
   color: var(--theme-type-secondary)
@@ -64,22 +67,30 @@
   display: flex
   flex-direction: column
   gap: 0.5rem
+  @media screen and ( max-width: 770px)
+    gap: 0.25rem
 
 .columnOne
-  @media screen and ( max-width: 775px)
+  @media screen and ( max-width: 770px)
     flex-direction: row
     width: 100%
-    gap: 3rem
+    gap: 1rem
   svg, img
     height: 1.4rem
     width: auto
     cursor: pointer
     user-select: none
+    @media screen and ( max-width: 770px)
+      // height: auto
+      // width: 6rem
+      flex-shrink: 0
   p
     font-size: 1.25rem
     color: var(--theme-type-secondary)
     font-weight: 600
     max-width: 12em
+    @media screen and ( max-width: 770px)
+      max-width: 100%
 
 .link
   text-decoration: none
