@@ -4,7 +4,7 @@
   @media screen and (max-width: 900px)
     flex-direction: column
     min-height: unset
-    gap: 3rem
+    gap: var(--spacing-innerscections)
     padding: var(--spacing-sections) 0
     
 .column
@@ -15,7 +15,7 @@
   flex: 1
   @media screen and (max-width: 900px)
     padding: 0 var(--spacing-sides)
-    gap: 3rem
+    gap: var(--spacing-innersections-small)
   h2
     font-size: 1.5rem
   p
@@ -36,6 +36,7 @@
     position: absolute
     top: 0
     left: 0
+    width: 100%
     padding: 1rem var(--spacing-sides)
   // Font
   p
