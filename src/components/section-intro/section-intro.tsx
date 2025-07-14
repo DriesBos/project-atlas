@@ -1,8 +1,16 @@
+'use client';
+
 import { SectionCounter } from '../section-counter';
 import styles from './section-intro.module.sass';
 import Button from '@/components/button/button';
+import { useCallback } from 'react';
+import { scrollToSection } from '@/utils/scrollToSection';
 
 const SectionIntro = () => {
+  const handleScrollToSection = useCallback((sectionId: string) => {
+    scrollToSection(sectionId);
+  }, []);
+
   return (
     <section
       className={`${styles.sectionIntro} animateSectionBlock`}
@@ -27,7 +35,9 @@ const SectionIntro = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <Button>Join Us</Button>
+          <Button onClick={() => handleScrollToSection('sectionMail')}>
+            Join Us
+          </Button>
         </div>
       </div>
     </section>

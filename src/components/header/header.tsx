@@ -8,6 +8,7 @@ import Logo from '@/components/icons/logo';
 import { useThemeStore } from '@/providers/theme-store-provider';
 import type { ThemeState } from '@/store/theme-store';
 import ThemeIcon from '../theme-icon/theme-icon';
+import { scrollToSection } from '@/utils/scrollToSection';
 
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
@@ -24,23 +25,7 @@ const Header = ({}) => {
   }, [setTheme, theme]);
 
   const handleScrollToSection = useCallback((sectionId: string) => {
-    const bodyElement = document.body;
-    const targetSection = document.querySelector(
-      `#${sectionId}`
-    ) as HTMLElement;
-
-    if (bodyElement && targetSection) {
-      const offsetTop = targetSection.offsetTop;
-
-      // Try scrolling the body instead of main
-      bodyElement.scrollTop = offsetTop;
-
-      // Also try window.scrollTo as fallback
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
-    }
+    scrollToSection(sectionId);
   }, []);
 
   // IntersectionObserver to track when sections are in view
