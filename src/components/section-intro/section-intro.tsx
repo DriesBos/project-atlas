@@ -9,7 +9,7 @@ const SectionIntro = () => {
       id="sectionIntro"
     >
       <div className={styles.sectionCounter}>
-        <p>Hero</p>
+        <p>About</p>
         <SectionCounter />
       </div>
 
