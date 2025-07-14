@@ -4,8 +4,12 @@ import { SectionCounter } from '@/components/section-counter';
 const SectionOhio = () => {
   return (
     <section className={styles.sectionOhio} id="sectionOhio">
+      <div className={`${styles.sectionCounter} ${styles.mobile}`}>
+        <p>Ohio Leadership</p>
+        <SectionCounter />
+      </div>
       <div className={`${styles.column} animateSectionBlock`}>
-        <div className={styles.sectionCounter}>
+        <div className={`${styles.sectionCounter} ${styles.desktop}`}>
           <p>Ohio Leadership</p>
           <SectionCounter />
         </div>
@@ -24,7 +28,7 @@ const SectionOhio = () => {
         </p>
       </div>
       <div className={`${styles.column} animateSectionBlock`}>
-        <div className={styles.sectionCounter}>
+        <div className={`${styles.sectionCounter} ${styles.desktop}`}>
           <p>Ohio Leadership</p>
           <SectionCounter />
         </div>
