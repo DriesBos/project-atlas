@@ -26,11 +26,11 @@ const Footer = () => {
               <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
-              <p>Welcome</p>
-              <p>Figures</p>
+              <p>about</p>
+              <p>data</p>
               <p>Issues</p>
               <p>Solutions</p>
-              <p>Leadership</p>
+              <p>Ohio</p>
               <p>Join Us</p>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
       <div className={styles.container_bottom}>
         <p className={styles.copyright}>
-          ©{currentYear} Project Atlas. All rights reserved
+          ©{currentYear} American Transmission Leadership and Security
         </p>
         <TimeDisplays className={styles.timeZones} />
         <div className={styles.userinfoContainer}>

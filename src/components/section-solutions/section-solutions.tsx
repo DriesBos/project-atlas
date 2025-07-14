@@ -23,7 +23,9 @@ const SectionSolutions = () => {
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
-        <h2>Innovative Solutions</h2>
+        <h2>
+          Foundations for an Open Approach to Upgrading Grid Infrastructure.
+        </h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
         <div

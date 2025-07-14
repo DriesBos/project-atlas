@@ -5,14 +5,14 @@ const SectionOhio = () => {
   return (
     <section className={styles.sectionOhio} id="sectionOhio">
       <div className={`${styles.sectionCounter} ${styles.mobile}`}>
-        <p>Ohio Leadership</p>
+        <p>Ohio</p>
         <SectionCounter />
       </div>
       <div
         className={`${styles.column} ${styles.columnOne} animateSectionBlock`}
       >
         <div className={`${styles.sectionCounter} ${styles.desktop}`}>
-          <p>Ohio Leadership</p>
+          <p>Ohio</p>
           <SectionCounter />
         </div>
         <h2>
@@ -33,7 +33,7 @@ const SectionOhio = () => {
         className={`${styles.column} ${styles.columnTwo} animateSectionBlock`}
       >
         <div className={`${styles.sectionCounter} ${styles.desktop}`}>
-          <p>Ohio Leadership</p>
+          <p>Ohio</p>
           <SectionCounter />
         </div>
         <h2>A Blueprint for America’s Grid</h2>

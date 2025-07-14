@@ -147,7 +147,7 @@ const Header = ({}) => {
           className={styles.animateBlockContent}
           onClick={() => handleScrollToSection('sectionIntro')}
         >
-          <p>Welcome</p>
+          <p>about</p>
         </div>
       </div>
       <div
@@ -159,7 +159,7 @@ const Header = ({}) => {
           className={styles.animateBlockContent}
           onClick={() => handleScrollToSection('sectionNumbers')}
         >
-          <p>figures</p>
+          <p>data</p>
         </div>
       </div>
       <div
@@ -195,7 +195,7 @@ const Header = ({}) => {
           className={styles.animateBlockContent}
           onClick={() => handleScrollToSection('sectionOhio')}
         >
-          <p>Leadership</p>
+          <p>Ohio</p>
         </div>
       </div>
       <div

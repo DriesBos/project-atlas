@@ -16,7 +16,7 @@ const SectionMail = () => {
         <h2>Join Us</h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
-        <h2> Get Updates from Project ATLAS</h2>
+        <h2> Get Updates from ATLAS</h2>
         <Subscribe />
       </div>
     </section>

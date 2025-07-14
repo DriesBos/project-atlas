@@ -9,7 +9,9 @@ const SectionProblems = () => {
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
-        <h2>Pressing Problems</h2>
+        <h2>
+          America's Prosperity and Security Depends on How We Move Electrons.
+        </h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
         <div className={styles.columnTwoOne}>

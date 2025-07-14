@@ -11,7 +11,7 @@ const SectionNumbers = () => {
       id="sectionNumbers"
     >
       <div className={styles.sectionCounter}>
-        <p>Figures</p>
+        <p>data</p>
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne} ${styles.desktop}`}>
