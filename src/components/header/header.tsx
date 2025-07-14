@@ -195,7 +195,7 @@ const Header = ({}) => {
           className={styles.animateBlockContent}
           onClick={() => handleScrollToSection('sectionOhio')}
         >
-          <p>Ohio Leadership</p>
+          <p>Leadership</p>
         </div>
       </div>
       <div

@@ -10,7 +10,10 @@
   z-index: var(--z-footer)
 
 .container_top
-  padding: 8rem 0
+  padding: 9rem var(--spacing-sides)
+  @media screen and ( max-width: 775px)
+    padding: var(--spacing-sections) var(--spacing-sides)
+
 
 .container_bottom
   border-top: var(--border)
@@ -28,13 +31,25 @@
     display: flex
     align-items: center
     gap: 2rem
+  @media screen and ( max-width: 775px)
+    .copyright
+      max-width: 13em
+    .screenres
+      display: none
+  @media screen and ( max-width: 550px)
+    .timeZones
+      display: none
 
 .content
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
   wrap: nowrap
   margin: 0 auto
   max-width: 1400px
+  gap: 3rem
+  @media screen and ( max-width: 775px)
+    justify-content: flex-start
 
 .column
   display: flex
@@ -52,6 +67,10 @@
   gap: 0.5rem
 
 .columnOne
+  @media screen and ( max-width: 775px)
+    flex-direction: row
+    width: 100%
+    gap: 3rem
   svg, img
     height: 1.4rem
     width: auto

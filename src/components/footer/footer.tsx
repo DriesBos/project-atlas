@@ -26,12 +26,12 @@ const Footer = () => {
               <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
-              <Link href="/" className={styles.link}>
-                Home
-              </Link>
-              <Link href="/play" className={styles.link}>
-                Playground
-              </Link>
+              <p>Welcome</p>
+              <p>Figures</p>
+              <p>Issues</p>
+              <p>Solutions</p>
+              <p>Leadership</p>
+              <p>Join Us</p>
             </div>
           </div>
 
@@ -46,7 +46,6 @@ const Footer = () => {
               <Link href="/play" className={styles.link}>
                 LinkedIn
               </Link>
-              <p>Subscribe</p>
             </div>
           </div>
 
@@ -66,10 +65,12 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.container_bottom}>
-        <p>©{currentYear} Project Atlas. All rights reserved</p>
-        <TimeDisplays />
+        <p className={styles.copyright}>
+          ©{currentYear} Project Atlas. All rights reserved
+        </p>
+        <TimeDisplays className={styles.timeZones} />
         <div className={styles.userinfoContainer}>
-          <p>
+          <p className={styles.screenres}>
             <ScreenInfo />
           </p>
           <ThemeIcon />
