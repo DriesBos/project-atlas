@@ -23,10 +23,10 @@ const SectionOhio = () => {
         <p>
           They call Ohio “America’s Industrial Capital” for a reason. We’re home
           to the nation’s largest steel foundry. We lead the country in glass,
-          rubber, and plastic production. We're the fourth largest data center
-          hub. We manufacture aircraft, automobiles, life-saving drugs, solar
-          cells, fuel cells, tanks, missiles, robots, and chemicals. We know how
-          to build.
+          rubber, and plastic production. We&apos;re the fourth largest data
+          center hub. We manufacture aircraft, automobiles, life-saving drugs,
+          solar cells, fuel cells, tanks, missiles, robots, and chemicals. We
+          know how to build.
         </p>
       </div>
       <div
