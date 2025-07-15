@@ -8,10 +8,11 @@ import { SectionCounter } from '@/components/section-counter';
 const images = [
   '/slideshow/one.jpg',
   '/slideshow/two.jpg',
-  '/slideshow/three.jpg',
   '/slideshow/four.jpg',
   '/slideshow/five.jpg',
   '/slideshow/six.jpg',
+  '/slideshow/seven.jpg',
+  '/slideshow/eight.jpg',
 ];
 
 const Landing = () => {
