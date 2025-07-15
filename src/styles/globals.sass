@@ -139,3 +139,8 @@ form
       outline: none
       outline-offset: 0
       background: none
+
+p, h1, h2, h3
+  max-width: calc(100vw - 4 * var(--spacing-sides))
+  @media screen and (max-width: 575px)
+    max-width: calc(100vw - 4 * var(--spacing-sides)) !important
