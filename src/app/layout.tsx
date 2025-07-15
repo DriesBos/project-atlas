@@ -39,6 +39,17 @@ const roopert = localFont({
   variable: '--font-roopert',
 });
 
+const teetee = localFont({
+  src: [
+    {
+      path: './../fonts/teetee/teetee.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-teetee',
+});
+
 export const metadata: Metadata = {
   title: 'American Transmission',
   description: 'Powering the New American Industrial Base.',
@@ -47,7 +58,7 @@ export const metadata: Metadata = {
     description: 'Powering the New American Industrial Base.',
     images: [
       {
-        url: '/ogimage.jpg',
+        url: 'https://project-atlas-prototype.netlify.app//ogimage.jpg',
         width: 1200,
         height: 630,
         alt: 'American Transmission - Powering the New American Industrial Base.',
@@ -59,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'American Transmission',
     description: 'Powering the New American Industrial Base.',
-    images: ['/ogimage.jpg'],
+    images: ['https://project-atlas-prototype.netlify.app//ogimage.jpg'],
   },
   appleWebApp: {
     title: 'ATLAS',
@@ -93,7 +104,9 @@ export default function RootLayout({
       <StoryblokProvider>
         <ThemeStoreProvider>
           <SectionCounterProvider>
-            <body className={`${roopert.variable} ${spaceMono.variable}`}>
+            <body
+              className={`${roopert.variable} ${spaceMono.variable} ${teetee.variable}`}
+            >
               <ScrollReset />
               <StaggerAnimation />
               <main>
