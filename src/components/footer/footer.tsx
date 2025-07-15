@@ -50,7 +50,7 @@ const Footer = () => {
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
-              <p>Unite</p>
+              <p>Online</p>
             </div>
             <div className={styles.columnLinks}>
               <a
@@ -72,13 +72,11 @@ const Footer = () => {
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
-              <p>Contact</p>
+              <p>Address</p>
             </div>
             <div className={styles.columnLinks}>
-              <a href="mailto:americantransmission@protonmail.com">
-                americantransmission@
-                <br />
-                protonmail.com
+              <a href="mailto:info@americatransmission.org">
+                info@americatransmission.org
               </a>
               <p>
                 34 S. 3rd St., Suite 100,
