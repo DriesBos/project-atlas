@@ -22,8 +22,12 @@
   border-top: var(--border)
   padding-left: var(--spacing-sides)
   height: 3.125rem
+  @supports (margin-bottom: env(safe-area-inset-bottom))
+    height: calc(env(safe-area-inset-bottom) + 3.125rem)
   @media screen and ( max-width: 770px)
     height: 4rem
+    @supports (margin-bottom: env(safe-area-inset-bottom))
+      height: calc(env(safe-area-inset-bottom) + 4rem)
   ul
     display: flex
     gap: 2rem
