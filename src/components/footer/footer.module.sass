@@ -46,10 +46,14 @@
         align-items: center
         flex-shrink: 0
         width: 3.125rem
+        @supports (margin-bottom: env(safe-area-inset-bottom))
+          width: calc(env(safe-area-inset-bottom) + 4rem)
         padding: 0
         border-left: var(--border)
         @media screen and (max-width: 770px)
           width: 4rem
+          @supports (margin-bottom: env(safe-area-inset-bottom))
+            width: calc(env(safe-area-inset-bottom) + 4rem)
     @media screen and ( max-width: 770px)
       gap: 1rem
   @media screen and ( max-width: 770px)
