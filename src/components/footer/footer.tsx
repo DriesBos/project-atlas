@@ -31,18 +31,40 @@ const Footer = () => {
               <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
-              <p onClick={() => handleScrollToSection('sectionIntro')}>About</p>
-              <p onClick={() => handleScrollToSection('sectionNumbers')}>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionIntro')}
+              >
+                About
+              </p>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionNumbers')}
+              >
                 Data
               </p>
-              <p onClick={() => handleScrollToSection('sectionProblems')}>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionProblems')}
+              >
                 Issues
               </p>
-              <p onClick={() => handleScrollToSection('sectionSolutions')}>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionSolutions')}
+              >
                 Solutions
               </p>
-              <p onClick={() => handleScrollToSection('sectionOhio')}>Ohio</p>
-              <p onClick={() => handleScrollToSection('sectionMail')}>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionOhio')}
+              >
+                Ohio
+              </p>
+              <p
+                className={styles.links}
+                onClick={() => handleScrollToSection('sectionMail')}
+              >
                 Join Us
               </p>
             </div>
@@ -54,14 +76,14 @@ const Footer = () => {
             </div>
             <div className={styles.columnLinks}>
               <a
-                className={styles.link}
+                className={styles.links}
                 target="_blank"
                 href="https://www.linkedin.com/in/andrew-burchwell-a7284994/"
               >
                 LinkedIn
               </a>
               <a
-                className={styles.link}
+                className={styles.links}
                 target="_blank"
                 href="https://x.com/AndrewBurchwell"
               >
@@ -75,7 +97,10 @@ const Footer = () => {
               <p>Address</p>
             </div>
             <div className={styles.columnLinks}>
-              <a href="mailto:info@americatransmission.org">
+              <a
+                className={styles.links}
+                href="mailto:info@americatransmission.org"
+              >
                 info@americatransmission.org
               </a>
               <p>

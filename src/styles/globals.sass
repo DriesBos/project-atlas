@@ -54,6 +54,12 @@ body
   overflow-y: auto
   overscroll-behavior: none 
 
+// Fix pointer events
+body, .footerSpacer
+  pointer-events: none
+main, footer, header
+  pointer-events: auto
+
 main
   position: relative
   width: 100vw
@@ -76,7 +82,6 @@ section
 
 .footerSpacer
   height: 0
-  pointer-events: none
 
 .sectionCounter
   font-family: var(--font-space-mono), monospace
