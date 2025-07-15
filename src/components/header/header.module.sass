@@ -4,70 +4,89 @@
   left: 0
   right: 0
   display: flex
-  align-items: center
-  justify-content: space-between
-  height: 4rem
-  width: 100%
-  border-bottom: var(--border)
+  flex-direction: column
   z-index: var(--z-header)
   backdrop-filter: blur(10px) saturate(180%)
   -webkit-backdrop-filter: blur(10px) saturate(180%)
   supports-backdrop-filter: blur(10px)
   isolation: isolate
-  padding: var(--spacing-sides) var(--spacing-sides)
-  & > div:first-child
-    padding-left: var(--spacing-sides) !important
-  & > div:last-child
-    padding-right: var(--spacing-sides) !important
-  @media  screen and ( max-width: 770px )
-    height: auto
-    padding: var(--spacing-sides) var(--spacing-sides)
-
-  .block
-    // border-left: var(--border)
-    // display: flex
-    // align-items: center
-    // padding: 0 var(--spacing-sides)
-    // Font
-    p
+  &[data-active='true']
+    .bottomRow
+      height: 3.125rem
+      border-bottom: var(--border)
+      transition: height var(--transition-general), border-bottom var(--transition-general)
+      li
+        opacity: 1
+  &[data-active='false']
+    .bottomRow
+      height: 0
+      border-bottom: 0
+      li
+        opacity: 0
+  ul
+    display: flex
+    overflow: hidden
+    li
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
       font-family: var(--font-space-mono), monospace
       font-size: 0.75rem
-      color: var(--theme-type-secondary)
       line-height: 1.4
       text-transform: uppercase
-      transition: color var(--transition-general)
-    svg, img
-      height: var(--icon-small)
-      width: auto
-      cursor: pointer
+      padding: 0 1rem 
       user-select: none
-    // &:first-child
-    //   border-left: none
+      cursor: pointer
+      color: var(--theme-type)
+      @media screen and (max-width: 770px)
+        padding: 0 0.5rem
+      &:first-child
+        padding-left: var(--spacing-sides)
+      svg, img
+        height: var(--icon-small)
+        width: auto
+
+.topRow
+  height: 3.125rem
+  border-bottom: var(--border)
+  li
+    &:first-child
+      justify-content: flex-start
+    &:last-child
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 3.125rem
+      padding: 0
+
+.bottomRow
+  flex-wrap: wrap
+  width: 100%
+  @media screen and (pointer: fine)
+    li
+      &:hover
+        &::before
+          content: ''
+          position: absolute
+          left: 1rem
+          right: 1rem
+          bottom: 0.75rem
+          height: 1px
+          background: currentColor
+          @media screen and (max-width: 770px)
+            left: 0.5rem
+            right: 0.5rem
+      &:first-child
+        &:hover
+          &::before
+            left: 2rem
+            @media screen and (max-width: 770px)
+              left: 1rem
+
 
 .logo
   flex-grow: 1
-  padding: 0 0.75rem
-  svg
-    height: 2rem
-    width: auto
 
-.animateBlockWidth
-  width: 0px
-  padding: 0 !important
-  display: flex
-  justify-content: center
-  cursor: pointer
-  user-select: none
-  
-.animateBlockContent
-  opacity: 0
-  padding: 0 0.75rem
-
-.active
-  color: var(--theme-type)
-  p
-    color: var(--theme-type) !important
-
-.desktop
-  @media screen and (max-width: 700px)
-    display: none
+.toggle
+  border-left: var(--border)
