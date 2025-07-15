@@ -18,7 +18,6 @@
   @media screen and ( max-width: 770px)
     padding: var(--spacing-sections) var(--spacing-sides)
 
-
 .container_bottom
   border-top: var(--border)
   padding-left: var(--spacing-sides)
@@ -76,7 +75,7 @@
   font-size: 1rem
   gap: 1.5rem
   @media screen and ( max-width: 770px)
-    gap: 0.75rem
+    gap: 0.5rem
 
 .columnTitle
   color: var(--theme-type-secondary)
@@ -105,8 +104,13 @@
     color: var(--theme-type-secondary)
     font-weight: 600
     max-width: 12em
+    text-transform: unset
     @media screen and ( max-width: 770px)
       max-width: 16em
+
+.columnTwo
+  @media screen and ( max-width: 770px)
+    display: none
 
 .link
   text-decoration: none

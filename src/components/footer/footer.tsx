@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className={styles.column}>
+          <div className={`${styles.column} ${styles.columnTwo}`}>
             <div className={styles.columnTitle}>
               <p>Site</p>
             </div>

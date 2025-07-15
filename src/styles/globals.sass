@@ -41,6 +41,7 @@ html
 // Transitions
 main, footer
   transition: background var(--transition-theme), color var(--transition-theme)
+  will-change: background, color
  
 html, body, main
   scrollbar-width: none
@@ -57,6 +58,7 @@ main
   position: relative
   width: 100vw
   margin: 0 auto
+  will-change: width
 
 section
   position: sticky
