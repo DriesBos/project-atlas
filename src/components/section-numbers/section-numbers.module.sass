@@ -1,27 +1,24 @@
 .sectionNumbers
   display: flex
-  padding: var(--spacing-sections) 0
+  gap: 2rem
+  padding: var(--spacing-sections) var(--spacing-sides)
 
 .column
   @media screen and (min-width: 1450px)
     flex: 1
 
-// .columnOne
-//   @media screen and (max-width: 1450px)
-//     flex: 1
-
 .columnTwo
   display: flex
   flex-wrap: wrap
   justify-content: flex-start
+  gap: 2rem
   & > div
-    width: 50%
+    width: calc(50% - 1rem)
   @media screen and (max-width: 575px)
     flex-direction: column
     flex-wrap: nowrap
     align-items: stretch
     width: 100%
-    gap: 2rem
     & > div
       width: 100%
 
