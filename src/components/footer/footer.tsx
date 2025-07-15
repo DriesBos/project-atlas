@@ -88,16 +88,20 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.container_bottom}>
-        <p className={styles.copyright}>
-          ©{currentYear} American Transmission Leadership and Security
-        </p>
-        <TimeDisplays className={styles.timeZones} />
-        <div className={styles.userinfoContainer}>
-          <p className={styles.screenres}>
+        <ul>
+          <li className={styles.copyright}>
+            ©{currentYear} American Transmission Leadership and Security
+          </li>
+          <li className={styles.userinfoContainer}>
+            <TimeDisplays className={styles.timeZones} />
+          </li>
+          <li className={styles.screenres}>
             <ScreenInfo />
-          </p>
-          <ThemeIcon />
-        </div>
+          </li>
+          <li className={styles.themeIcon}>
+            <ThemeIcon />
+          </li>
+        </ul>
       </div>
     </footer>
   );
