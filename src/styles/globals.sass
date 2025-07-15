@@ -91,6 +91,8 @@ form
   gap: 1rem
   border-bottom: var(--border)
   padding-bottom: 0.75rem
+  width: 100%
+  max-width: 100%
   input
     &::placeholder
       color: var(--theme-type-secondary)
@@ -106,9 +108,8 @@ form
     font-size: 1rem
     line-height: 1
     color: var(--theme-type)
-    max-width: 24em
-    @media screen and (max-width: 1000px)
-      max-width: 100%
+    width: 100%
+    max-width: 100%
   button
     background: none
     flex-shrink: 0
