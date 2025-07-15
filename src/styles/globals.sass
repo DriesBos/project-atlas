@@ -50,13 +50,11 @@ html, body, main
 
 body
   position: relative
-  height: 100dvh
   overflow-y: auto
   overscroll-behavior: none 
 
 main
   position: relative
-  min-height: 100dvh
   width: 100vw
   margin: 0 auto
 
@@ -64,9 +62,11 @@ section
   position: sticky
   top: 0
   border-top: var(--border)
+  scroll-margin-top: 3.125rem // 50px - Desktop header offset
   @media  screen and ( max-width: 770px )
     position: relative
     top: unset
+    scroll-margin-top: 4rem // 64px - Mobile header offset
 
 .animateSectionBlock
   opacity: 0
