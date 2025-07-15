@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className={`${styles.column} ${styles.columnTwo}`}>
+          {/* <div className={`${styles.column} ${styles.columnTwo}`}>
             <div className={styles.columnTitle}>
               <p>Site</p>
             </div>
@@ -68,9 +68,9 @@ const Footer = () => {
                 Join Us
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div className={styles.column}>
+          {/* <div className={styles.column}>
             <div className={styles.columnTitle}>
               <p>Online</p>
             </div>
@@ -90,7 +90,7 @@ const Footer = () => {
                 Twitter
               </a>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.column}>
             <div className={styles.columnTitle}>
@@ -103,11 +103,11 @@ const Footer = () => {
               >
                 info@americatransmission.org
               </a>
-              <p>
+              {/* <p>
                 34 S. 3rd St., Suite 100,
                 <br />
                 Columbus, OH 43215
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
