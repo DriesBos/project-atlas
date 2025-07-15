@@ -14,7 +14,8 @@
     .bottomRow
       height: 3.125rem
       border-bottom: var(--border)
-      transition: height var(--transition-general), border-bottom var(--transition-general)
+      @media screen and (max-width: 770px)
+        height: 4rem
       li
         opacity: 1
   &[data-active='false']
@@ -39,54 +40,39 @@
       user-select: none
       cursor: pointer
       color: var(--theme-type)
+      &:last-child
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 3.125rem
+        padding: 0
+        border-left: var(--border)
+        @media screen and (max-width: 770px)
+          width: 4rem
       @media screen and (max-width: 770px)
         padding: 0 0.5rem
       &:first-child
         padding-left: var(--spacing-sides)
       svg, img
-        height: var(--icon-small)
+        height: var(--icon-size)
         width: auto
 
 .topRow
   height: 3.125rem
   border-bottom: var(--border)
+  @media screen and (max-width: 770px)
+    height: 4rem
   li
     &:first-child
       justify-content: flex-start
-    &:last-child
-      display: flex
-      justify-content: center
-      align-items: center
-      width: 3.125rem
-      padding: 0
 
 .bottomRow
   flex-wrap: wrap
   width: 100%
-  @media screen and (pointer: fine)
-    li
-      &:hover
-        &::before
-          content: ''
-          position: absolute
-          left: 1rem
-          right: 1rem
-          bottom: 0.75rem
-          height: 1px
-          background: currentColor
-          @media screen and (max-width: 770px)
-            left: 0.5rem
-            right: 0.5rem
-      &:first-child
-        &:hover
-          &::before
-            left: 2rem
-            @media screen and (max-width: 770px)
-              left: 1rem
-
+  transition: height var(--transition-general), border-bottom var(--transition-general)
+  li:nth-last-child(2)
+    flex-grow: 1
+    justify-content: flex-start
 
 .logo
   flex-grow: 1
-
-.toggle
-  border-left: var(--border)

@@ -7,6 +7,7 @@ import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
 import IconPlus from '@/components/icons/icon-plus';
 import { scrollToSection } from '@/utils/scrollToSection';
+import ThemeIcon from '@/components/theme-icon/theme-icon';
 
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
@@ -42,8 +43,8 @@ const Header = ({}) => {
     if (headerActive) {
       gsap.to(bottomRowItems, {
         opacity: 1,
-        duration: 1,
-        stagger: 0.15,
+        duration: 0.66,
+        stagger: 0.1,
         ease: 'power2.out',
       });
     }
@@ -75,6 +76,9 @@ const Header = ({}) => {
         </li>
         <li onClick={() => handleNavItemClick('sectionOhio')}>Ohio</li>
         <li onClick={() => handleNavItemClick('sectionMail')}>Join Us</li>
+        <li className={styles.themeIcon}>
+          <ThemeIcon />
+        </li>
       </ul>
     </header>
   );
