@@ -76,7 +76,9 @@ const Footer = () => {
             </div>
             <div className={styles.columnLinks}>
               <a href="mailto:americantransmission@protonmail.com">
-                americantransmission@protonmail.com
+                americantransmission@
+                <br />
+                protonmail.com
               </a>
               <p>
                 34 S. 3rd St., Suite 100,

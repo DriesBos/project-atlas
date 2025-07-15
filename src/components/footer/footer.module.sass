@@ -7,6 +7,11 @@
   flex-direction: column
   justify-content: flex-end
   z-index: var(--z-footer)
+  p, li, a, h1, h2, h3
+    font-size: 0.75rem
+    line-height: 1.4
+    text-transform: uppercase
+    letter-spacing: 0.05em
 
 .container_top
   padding: 9rem var(--spacing-sides)
@@ -29,10 +34,6 @@
       display: flex
       align-items: center
       justify-content: center
-      font-family: var(--font-space-mono), monospace
-      font-size: 0.75rem
-      line-height: 1.4
-      text-transform: uppercase
       user-select: none
       cursor: pointer
       color: currentColor
@@ -90,11 +91,10 @@
 
 .columnOne
   @media screen and ( max-width: 770px)
-    flex-direction: row
     width: 100%
     gap: 1rem
   svg, img
-    height: 1.4rem
+    height: var(--icon-size)
     width: auto
     cursor: pointer
     user-select: none
@@ -106,7 +106,7 @@
     font-weight: 600
     max-width: 12em
     @media screen and ( max-width: 770px)
-      max-width: 100%
+      max-width: 16em
 
 .link
   text-decoration: none
@@ -118,4 +118,3 @@
 .copyright, .userinfoContainer, .screenres
   flex-grow: 1
 
-  
