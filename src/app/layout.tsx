@@ -42,6 +42,10 @@ const roopert = localFont({
 export const metadata: Metadata = {
   title: 'American Transmission',
   description: 'Powering the New American Industrial Base.',
+  appleWebApp: {
+    title: 'ATLAS',
+    statusBarStyle: 'black-translucent',
+  },
   icons: {
     icon: [
       {
