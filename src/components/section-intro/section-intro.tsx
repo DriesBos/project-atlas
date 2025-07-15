@@ -28,8 +28,8 @@ const SectionIntro = () => {
       <div className={styles.textContainer}>
         <div className={styles.copy}>
           <p>
-            Project ATLAS is a coalition uniting technologists, industrialists,
-            and policymakers to deploy transmission faster than ever before with
+            ATLAS is a coalition uniting technologists, industrialists, and
+            policymakers to deploy transmission faster than ever before with
             advanced technologies and customer-led development.
           </p>
         </div>

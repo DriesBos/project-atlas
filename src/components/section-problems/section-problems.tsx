@@ -21,9 +21,9 @@ const SectionProblems = () => {
             Data centers and manufacturing facilities are driving an
             unprecedented surge in demand for energy, but it still takes up to a
             decade to build new transmission and other power infrastructure
-            infrastructure. Project ATLAS is working to create accelerated
-            pathways for new transmission to ensure that large energy customers
-            are able to get electrons where and when they need them most.
+            infrastructure. ATLAS is working to create accelerated pathways for
+            new transmission to ensure that large energy customers are able to
+            get electrons where and when they need them most.
           </p>
         </div>
         <div className={styles.columnTwoTwo}>
@@ -31,7 +31,7 @@ const SectionProblems = () => {
           <p>
             The risk of blackouts and brownouts due to insufficient generation
             capacity, natural disasters, and adversarial attacks is increasing.
-            Project ATLAS is working to deploy transmission and other energy
+            ATLAS is working to deploy transmission and other energy
             infrastructure that combines advanced physical technologies with
             digital intelligence to create a more robust and resilient grid.
           </p>

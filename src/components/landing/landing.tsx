@@ -51,7 +51,7 @@ const Landing = () => {
   return (
     <section className={`${styles.landing} animateSectionBlock`}>
       <div className={styles.sectionCounter}>
-        <p>Atlas Project</p>
+        <p>American Transmission</p>
         <SectionCounter />
       </div>
       <div className={styles.circleContainer}>
