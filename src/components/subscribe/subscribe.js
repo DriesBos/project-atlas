@@ -79,7 +79,10 @@ export function Subscribe() {
         <p>Thank you for subscribing!</p>
       )}
       {message && (
-        <p style={{ color: isError ? 'red' : 'green', marginTop: '10px' }}>
+        <p
+          className="notificationText"
+          data-style={isError ? 'error' : 'success'}
+        >
           {message}
         </p>
       )}

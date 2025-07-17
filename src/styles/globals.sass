@@ -145,6 +145,21 @@ form
       outline-offset: 0
       background: none
 
+.notificationText
+  position: absolute
+  bottom: -1.5rem
+  left: 0
+  font-size: 0.75rem
+  text-transform: uppercase
+  font-family: var(--font-space-mono), monospace
+  font-weight: 500
+  line-height: 1
+  letter-spacing: 0.05em
+  &[data-style='error']
+    color: red
+  &[data-style='success']
+    color: green
+
 p, h1, h2, h3
   max-width: calc(100vw - 4 * var(--spacing-sides))
   @media screen and (max-width: 575px)
