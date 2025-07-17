@@ -34,14 +34,31 @@ exports.handler = async (event) => {
       server: MailchimpServer,
       audienceId: MailchimpAudience,
       keyLength: MailchimpKey?.length,
+      keyEndsWithDash: MailchimpKey?.includes('-'),
+      keyLastPart: MailchimpKey?.split('-').pop(),
     });
 
-    const customUrl = `https://${MailchimpServer}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
+    // Validate API key format
+    if (!MailchimpKey.includes('-')) {
+      console.error('Invalid API key format - missing datacenter');
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Invalid API key format' }),
+      };
+    }
+
+    // Extract datacenter from API key
+    const datacenter = MailchimpKey.split('-').pop();
+    console.log('Extracted datacenter:', datacenter);
+    
+    // Use datacenter from API key instead of environment variable
+    const customUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
+    console.log('Request URL:', customUrl);
 
     const response = await fetch(customUrl, {
       method: 'POST',
       headers: {
-        Authorization: `Basic ${Buffer.from(`user:${MailchimpKey}`).toString(
+        Authorization: `Basic ${Buffer.from(`anystring:${MailchimpKey}`).toString(
           'base64'
         )}`,
         'Content-Type': 'application/json',
@@ -54,7 +71,13 @@ exports.handler = async (event) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Mailchimp API Error:', errorData);
+      console.error('Mailchimp API Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        errorData,
+        url: customUrl,
+        datacenter,
+      });
 
       // Handle specific Mailchimp errors
       if (errorData.title === 'Member Exists') {
