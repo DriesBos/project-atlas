@@ -61,7 +61,14 @@ export function Subscribe() {
 
   return (
     <>
-      {!isSubmitted ? (
+      {message && message.length > 1 ? (
+        <p
+          className="notificationText"
+          data-style={isError ? 'error' : 'success'}
+        >
+          {message}
+        </p>
+      ) : (
         <form name="contact" onSubmit={handleFormSubmit}>
           <input type="hidden" name="form-name" value="contact" />
           <input
@@ -75,16 +82,6 @@ export function Subscribe() {
             {isLoading ? 'Subscribing...' : 'Subscribe'}
           </button>
         </form>
-      ) : (
-        <p>Thank you for subscribing!</p>
-      )}
-      {message && (
-        <p
-          className="notificationText"
-          data-style={isError ? 'error' : 'success'}
-        >
-          {message}
-        </p>
       )}
     </>
   );
