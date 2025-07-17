@@ -50,7 +50,7 @@ exports.handler = async (event) => {
     // Extract datacenter from API key
     const datacenter = MailchimpKey.split('-').pop();
     console.log('Extracted datacenter:', datacenter);
-    
+
     // Use datacenter from API key instead of environment variable
     const customUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
     console.log('Request URL:', customUrl);
@@ -58,9 +58,9 @@ exports.handler = async (event) => {
     const response = await fetch(customUrl, {
       method: 'POST',
       headers: {
-        Authorization: `Basic ${Buffer.from(`anystring:${MailchimpKey}`).toString(
-          'base64'
-        )}`,
+        Authorization: `Basic ${Buffer.from(
+          `anystring:${MailchimpKey}`
+        ).toString('base64')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
