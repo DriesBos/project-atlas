@@ -4,28 +4,59 @@ import { useState } from 'react';
 
 export function Subscribe() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
+    setMessage('');
+    setIsError(false);
+
     const formData = new FormData(event.target);
+    const email = formData.get('email');
 
-    // Clear the email input immediately
-    event.target.reset();
+    if (!email) {
+      setMessage('Please enter a valid email address');
+      setIsError(true);
+      setIsLoading(false);
+      return;
+    }
 
-    // Set submitted state
-    setIsSubmitted(true);
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    // Reset submitted state after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+      const data = await response.json();
 
-    await fetch('/__form.html', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    });
-    // Success and error handling ...
+      if (response.ok) {
+        setMessage('Thank you for subscribing!');
+        setIsError(false);
+        setIsSubmitted(true);
+        event.target.reset();
+
+        // Reset form state after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setMessage('');
+        }, 5000);
+      } else {
+        setMessage(data.error || 'Failed to subscribe. Please try again.');
+        setIsError(true);
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setMessage('Network error. Please try again.');
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -35,14 +66,22 @@ export function Subscribe() {
           <input type="hidden" name="form-name" value="contact" />
           <input
             name="email"
-            type="text"
+            type="email"
             placeholder="Your email address"
             required
+            disabled={isLoading}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? 'Subscribing...' : 'Subscribe'}
+          </button>
         </form>
       ) : (
-        <p>Thank you!</p>
+        <p>Thank you for subscribing!</p>
+      )}
+      {message && (
+        <p style={{ color: isError ? 'red' : 'green', marginTop: '10px' }}>
+          {message}
+        </p>
       )}
     </>
   );
