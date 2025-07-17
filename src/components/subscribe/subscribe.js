@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 export function Subscribe() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [isError, setIsError] = useState(false);
@@ -38,12 +37,10 @@ export function Subscribe() {
       if (response.ok) {
         setMessage('Thank you for subscribing!');
         setIsError(false);
-        setIsSubmitted(true);
         event.target.reset();
 
         // Reset form state after 5 seconds
         setTimeout(() => {
-          setIsSubmitted(false);
           setMessage('');
         }, 5000);
       } else {
