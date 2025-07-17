@@ -21,9 +21,6 @@ const Landing = () => {
   const slideInterval = 1500; // 1.5 seconds
 
   useEffect(() => {
-    console.log('Current image index:', currentImageIndex);
-    console.log('Images array:', images);
-
     // Reset progress when slide changes
     setProgress(0);
 
