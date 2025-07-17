@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@netlify/functions": "^4.1.11",
     "@netlify/plugin-nextjs": "^5.11.5",
     "@react-three/drei": "^10.4.4",
     "@react-three/fiber": "^9.2.0",
