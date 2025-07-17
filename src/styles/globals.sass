@@ -116,6 +116,7 @@ form
     width: 100%
     max-width: 100%
   button
+    transition: opacity var(--transition-general)
     background: none
     flex-shrink: 0
     border: var(--border)
@@ -136,14 +137,18 @@ form
     letter-spacing: 0.05em
     white-space: nowrap
     overflow: hidden
-
     &:active, &:focus
       background: none
-      
     &:focus-visible
       outline: none
       outline-offset: 0
       background: none
+  &[data-error='error']
+    p
+      color: red !important
+  &[data-response='message']
+    button
+      opacity: 0
 
 .notificationText
   font-size: 0.75rem
@@ -152,10 +157,6 @@ form
   font-weight: 500
   line-height: 1
   letter-spacing: 0.05em
-  &[data-style='error']
-    color: red
-  &[data-style='success']
-    color: green
 
 p, h1, h2, h3
   max-width: calc(100vw - 4 * var(--spacing-sides))

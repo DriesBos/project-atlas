@@ -38,11 +38,6 @@ export function Subscribe() {
         setMessage('Thank you for subscribing!');
         setIsError(false);
         event.target.reset();
-
-        // Reset form state after 5 seconds
-        setTimeout(() => {
-          setMessage('');
-        }, 5000);
       } else {
         setMessage(data.error || 'Failed to subscribe. Please try again.');
         setIsError(true);
@@ -54,32 +49,34 @@ export function Subscribe() {
     } finally {
       setIsLoading(false);
     }
+    // Reset form state after 5 seconds
+    setTimeout(() => {
+      setMessage('');
+    }, 4000);
   };
 
   return (
-    <>
+    <form
+      name="contact"
+      onSubmit={handleFormSubmit}
+      data-response={message && message.length > 1 ? 'message' : 'default'}
+      data-error={isError ? 'error' : 'default'}
+    >
+      <input type="hidden" name="form-name" value="contact" />
       {message && message.length > 1 ? (
-        <p
-          className="notificationText"
-          data-style={isError ? 'error' : 'success'}
-        >
-          {message}
-        </p>
+        <p className="notificationText">{message}</p>
       ) : (
-        <form name="contact" onSubmit={handleFormSubmit}>
-          <input type="hidden" name="form-name" value="contact" />
-          <input
-            name="email"
-            type="email"
-            placeholder="Your email address"
-            required
-            disabled={isLoading}
-          />
-          <button type="submit" disabled={isLoading}>
-            {isLoading ? 'Subscribing...' : 'Subscribe'}
-          </button>
-        </form>
+        <input
+          name="email"
+          type="email"
+          placeholder="Your email address"
+          required
+          disabled={isLoading}
+        />
       )}
-    </>
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? 'Subscribing...' : 'Subscribe'}
+      </button>
+    </form>
   );
 }
