@@ -1,4 +1,8 @@
-import { apiPlugin, storyblokInit, SbReactComponentsMap } from '@storyblok/react/rsc';
+import {
+  apiPlugin,
+  storyblokInit,
+  SbReactComponentsMap,
+} from '@storyblok/react/rsc';
 
 import Page from '@/components/storyblok/page';
 import SectionIntro from '@/components/storyblok/section-intro';

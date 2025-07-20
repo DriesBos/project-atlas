@@ -6,9 +6,10 @@ export const fetchStory = async (
   console.log('FETCHSTORY', correctSlug, version);
 
   // Use the appropriate token based on version
-  const token = version === 'published' 
-    ? process.env.NEXT_PUBLIC_STORYBLOK_TOKEN 
-    : process.env.NEXT_PREVIEW_STORYBLOK_TOKEN;
+  const token =
+    version === 'published'
+      ? process.env.NEXT_PUBLIC_STORYBLOK_TOKEN
+      : process.env.NEXT_PREVIEW_STORYBLOK_TOKEN;
 
   if (!token) {
     throw new Error(`Missing Storyblok token for version: ${version}`);
@@ -24,7 +25,9 @@ export const fetchStory = async (
     );
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch story: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch story: ${response.status} ${response.statusText}`
+      );
     }
 
     const data = await response.json();
