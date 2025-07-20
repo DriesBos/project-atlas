@@ -5,7 +5,7 @@ import {
 } from '@storyblok/react/rsc';
 
 import Page from '@/components/storyblok/page';
-import SectionIntro from '@/components/storyblok/section-intro';
+import SectionIntro from '@/components/storyblok/section-intro/section-intro';
 
 const components: SbReactComponentsMap = {
   page: Page,

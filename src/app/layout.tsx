@@ -15,7 +15,6 @@ import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
 import SectionOhio from '@/components/section-ohio/section-ohio';
-import SectionIntro from '@/components/section-intro/section-intro';
 import SectionNumbers from '@/components/section-numbers/section-numbers';
 import SectionProblems from '@/components/section-problems/section-problems';
 import SectionSolutions from '@/components/section-solutions/section-solutions';
@@ -112,7 +111,6 @@ export default function RootLayout({
               <main>
                 <Header />
                 <Landing />
-                <SectionIntro />
                 <SectionNumbers />
                 <SectionProblems />
                 <SectionSolutions />
