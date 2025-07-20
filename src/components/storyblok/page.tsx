@@ -6,7 +6,7 @@ import {
 import React from 'react';
 
 interface SbPageData extends SbBlokData {
-  body: SbBlokData[];
+  body?: SbBlokData[];
 }
 
 interface PageProps {
@@ -16,7 +16,7 @@ interface PageProps {
 const Page: React.FunctionComponent<PageProps> = ({ blok }) => {
   return (
     <div {...storyblokEditable(blok)}>
-      {blok.body.map((nestedBlok) => (
+      {blok.body?.map((nestedBlok) => (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </div>

@@ -1,14 +1,13 @@
 'use client';
 
 import { storyblokEditable, SbBlokData } from '@storyblok/react/rsc';
-import { SectionCounter } from '../section-counter';
-import styles from './section-intro.module.sass';
+import { SectionCounter } from '../../section-counter';
+import styles from './sectionintro.module.sass';
 import Button from '@/components/button/button';
 import { useCallback } from 'react';
 import { scrollToSection } from '@/utils/scrollToSection';
 
 interface SectionIntroBlok extends SbBlokData {
-  component: 'section-intro';
   title?: string;
   text?: string;
   tag?: string;
@@ -18,7 +17,7 @@ interface SectionIntroProps {
   blok: SectionIntroBlok;
 }
 
-const SectionIntro = ({ blok }: SectionIntroProps) => {
+const SectionIntro: React.FunctionComponent<SectionIntroProps> = ({ blok }) => {
   const handleScrollToSection = useCallback((sectionId: string) => {
     scrollToSection(sectionId);
   }, []);

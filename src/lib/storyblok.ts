@@ -1,20 +1,14 @@
-import {
-  apiPlugin,
-  storyblokInit,
-  SbReactComponentsMap,
-} from '@storyblok/react/rsc';
+import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 import Page from '@/components/storyblok/page';
-import SectionIntro from '@/components/storyblok/section-intro/section-intro';
-
-const components: SbReactComponentsMap = {
-  page: Page,
-  'section-intro': SectionIntro,
-};
+import SectionIntro from '@/components/storyblok/sectionintro/sectionintro';
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN || 'demo-token',
-  components,
+  components: {
+    page: Page,
+    sectionintro: SectionIntro,
+  },
   use: [apiPlugin],
   apiOptions: {
     region: 'us', // Make sure this matches your Storyblok space region

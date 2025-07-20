@@ -111,10 +111,10 @@ export default function RootLayout({
               <main>
                 <Header />
                 <Landing />
+                {children}
                 <SectionNumbers />
                 <SectionProblems />
                 <SectionSolutions />
-                {children}
                 <SectionOhio />
                 <SectionMail />
                 <MainScrollTrigger />
