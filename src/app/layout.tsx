@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Space_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import '@/styles/reset.css';
 import '@/styles/vars.sass';
 import '@/styles/typography.sass';
@@ -111,6 +112,7 @@ export default function RootLayout({
               </main>
               <FooterSpacer />
               <Footer />
+              <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
             </body>
           </SectionCounterProvider>
         </ThemeStoreProvider>
