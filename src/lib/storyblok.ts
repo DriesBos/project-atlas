@@ -8,6 +8,8 @@ import SectionIssues from '@/components/storyblok/sectionissues/sectionissues';
 import BlokText from '@/components/storyblok/bloktext/bloktext';
 import SectionSolutions from '@/components/storyblok/sectionsolutions/sectionsolutions';
 import BlokSolutions from '@/components/storyblok/bloksolutions/bloksolutions';
+import SectionOhio from '@/components/storyblok/sectionohio/sectionohio';
+import BlokOhio from '@/components/storyblok/blokohio/blokohio';
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN || 'demo-token',
@@ -17,9 +19,11 @@ export const getStoryblokApi = storyblokInit({
     sectionnumbers: SectionNumbers,
     sectionissues: SectionIssues,
     sectionsolutions: SectionSolutions,
+    sectionohio: SectionOhio,
     bloknumbers: BlokNumbers,
     bloktext: BlokText,
     bloksolutions: BlokSolutions,
+    blokohio: BlokOhio,
   },
   use: [apiPlugin],
   apiOptions: {

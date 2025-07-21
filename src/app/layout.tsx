@@ -14,7 +14,7 @@ import StaggerAnimation from '@/components/stagger-animation';
 import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
-import SectionOhio from '@/components/section-ohio/section-ohio';
+import SectionOhio from '@/components/storyblok/sectionohio/sectionohio';
 import SectionMail from '@/components/section-mail/section-mail';
 import FooterSpacer from '@/components/footer-spacer';
 
@@ -109,7 +109,6 @@ export default function RootLayout({
                 <Header />
                 <Landing />
                 {children}
-                <SectionOhio />
                 <SectionMail />
                 <MainScrollTrigger />
               </main>
