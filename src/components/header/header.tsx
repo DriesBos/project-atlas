@@ -3,6 +3,8 @@
 import React, { useRef, useCallback, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './header.module.sass';
 import Logo from '@/components/icons/logo';
 import IconPlus from '@/components/icons/icon-plus';
@@ -12,6 +14,16 @@ import ThemeIcon from '@/components/theme-icon/theme-icon';
 const Header = ({}) => {
   const headerRef = useRef<HTMLElement>(null);
   const [headerActive, setHeaderActive] = useState(false);
+
+  // Get current route and check if homepage
+  const pathname = usePathname();
+  const [isHomepage, setIsHomepage] = useState(false);
+
+  // Update isHomepage state when pathname changes
+  React.useEffect(() => {
+    const currentIsHomepage = pathname === '/' || pathname === '';
+    setIsHomepage(currentIsHomepage);
+  }, [pathname]);
 
   const handleScrollToSection = useCallback((sectionId: string) => {
     scrollToSection(sectionId);
@@ -57,29 +69,39 @@ const Header = ({}) => {
       data-active={headerActive}
     >
       <ul className={styles.topRow}>
-        <li
-          className={styles.logo}
-          onClick={() => handleNavItemClick('sectionIntro')}
-        >
-          <Logo />
+        <li className={styles.logo}>
+          <Link className={styles.links} href="/">
+            <Logo />
+          </Link>
         </li>
         <li className={styles.toggle} onClick={handleToggleClick}>
           <IconPlus />
         </li>
       </ul>
-      <ul className={styles.bottomRow}>
-        <li onClick={() => handleNavItemClick('sectionIntro')}>about</li>
-        <li onClick={() => handleNavItemClick('sectionNumbers')}>data</li>
-        <li onClick={() => handleNavItemClick('sectionProblems')}>issues</li>
-        <li onClick={() => handleNavItemClick('sectionSolutions')}>
-          solutions
-        </li>
-        <li onClick={() => handleNavItemClick('sectionOhio')}>Ohio</li>
-        <li onClick={() => handleNavItemClick('sectionMail')}>Join Us</li>
-        <li className={styles.themeIcon}>
-          <ThemeIcon />
-        </li>
-      </ul>
+      {isHomepage ? (
+        <ul className={styles.bottomRow}>
+          <li onClick={() => handleNavItemClick('sectionIntro')}>about</li>
+          <li onClick={() => handleNavItemClick('sectionNumbers')}>data</li>
+          <li onClick={() => handleNavItemClick('sectionProblems')}>issues</li>
+          <li onClick={() => handleNavItemClick('sectionSolutions')}>
+            solutions
+          </li>
+          <li onClick={() => handleNavItemClick('sectionOhio')}>Ohio</li>
+          <li onClick={() => handleNavItemClick('sectionMail')}>Join Us</li>
+          <li className={styles.themeIcon}>
+            <ThemeIcon />
+          </li>
+        </ul>
+      ) : (
+        <ul className={styles.bottomRow}>
+          <li onClick={() => handleNavItemClick('sectionTerms')}>
+            Privacy Policy
+          </li>
+          <li className={styles.themeIcon}>
+            <ThemeIcon />
+          </li>
+        </ul>
+      )}
     </header>
   );
 };
