@@ -1,30 +1,51 @@
-import styles from './section-numbers.module.sass';
-import SectionNumbersBlock from './block/block';
+import {
+  storyblokEditable,
+  SbBlokData,
+  StoryblokServerComponent,
+} from '@storyblok/react/rsc';
+import styles from './sectionnumbers.module.sass';
+import SectionNumbersBlock from '../bloknumbers/bloknumbers';
 import { SectionCounter } from '../../section-counter';
 
-const SectionNumbers = () => {
-  const animationDuration = 1500; // 2 seconds
+interface SectionNumbersBlok extends SbBlokData {
+  body?: SbBlokData[];
+  tag?: string;
+}
+
+interface SectionNumbersProps {
+  blok: SectionNumbersBlok;
+}
+
+const SectionNumbers: React.FunctionComponent<SectionNumbersProps> = ({
+  blok,
+}) => {
+  // const animationDuration = 1500; // 2 seconds
 
   return (
     <section
       className={`${styles.sectionNumbers} animateSectionBlock`}
       id="sectionNumbers"
+      {...storyblokEditable(blok)}
     >
       <div className={styles.sectionCounter}>
-        <p>data</p>
+        <p>{blok.tag}</p>
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne} ${styles.desktop}`}>
-        <SectionNumbersBlock
+        {/* <SectionNumbersBlock
           number={2600}
           description="Energy projects waiting for grid connections nationwide"
           denominator="Gigawatts"
           large
           animationDelay={0}
           animationDuration={animationDuration}
-        />
+        /> */}
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
+        {blok.body?.map((nestedBlok) => (
+          <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+        ))}
+        {/* 
         <SectionNumbersBlock
           number={2600}
           description="Energy projects waiting for grid connections nationwide"
@@ -55,7 +76,7 @@ const SectionNumbers = () => {
           denominator="Years"
           animationDelay={0}
           animationDuration={animationDuration}
-        />
+        /> */}
       </div>
     </section>
   );
