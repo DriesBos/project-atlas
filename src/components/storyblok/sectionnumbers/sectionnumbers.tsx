@@ -1,11 +1,13 @@
+'use client';
+
 import {
   storyblokEditable,
   SbBlokData,
   StoryblokServerComponent,
 } from '@storyblok/react/rsc';
 import styles from './sectionnumbers.module.sass';
-import SectionNumbersBlock from '../bloknumbers/bloknumbers';
 import { SectionCounter } from '../../section-counter';
+import { useState, useEffect } from 'react';
 
 interface SectionNumbersBlok extends SbBlokData {
   body?: SbBlokData[];
@@ -19,7 +21,30 @@ interface SectionNumbersProps {
 const SectionNumbers: React.FunctionComponent<SectionNumbersProps> = ({
   blok,
 }) => {
-  // const animationDuration = 1500; // 2 seconds
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      setIsDesktop(windowWidth > 950);
+      setIsMobile(windowWidth <= 950);
+    };
+
+    // Set initial values
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Create the three arrays based on body
+  const arrayOne = blok.body ? [blok.body[0]].filter(Boolean) : [];
+  const arrayTwo = blok.body ? blok.body.slice(1) : [];
+  const arrayThree = blok.body || [];
 
   return (
     <section
@@ -31,52 +56,36 @@ const SectionNumbers: React.FunctionComponent<SectionNumbersProps> = ({
         <p>{blok.tag}</p>
         <SectionCounter />
       </div>
-      <div className={`${styles.column} ${styles.columnOne} ${styles.desktop}`}>
-        {/* <SectionNumbersBlock
-          number={2600}
-          description="Energy projects waiting for grid connections nationwide"
-          denominator="Gigawatts"
-          large
-          animationDelay={0}
-          animationDuration={animationDuration}
-        /> */}
-      </div>
+      {isDesktop && (
+        <div
+          className={`${styles.column} ${styles.columnOne} ${styles.desktop}`}
+        >
+          {arrayOne.map((nestedBlok) => (
+            <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+          ))}
+        </div>
+      )}
       <div className={`${styles.column} ${styles.columnTwo}`}>
-        {blok.body?.map((nestedBlok) => (
-          <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
-        ))}
-        {/* 
-        <SectionNumbersBlock
-          number={2600}
-          description="Energy projects waiting for grid connections nationwide"
-          denominator="Gigawatts"
-          large
-          animationDelay={0}
-          animationDuration={animationDuration}
-          className={styles.mobile}
-        />
-        <SectionNumbersBlock
-          number={55}
-          description="New high voltage transmission built in the US in 2023"
-          denominator="miles"
-          animationDelay={0}
-          animationDuration={animationDuration}
-        />
-        <SectionNumbersBlock
-          number={20.8}
-          description=" Annual cost to consumers from grid congestion in 2022"
-          denominator="Billion"
-          symbol="$"
-          animationDelay={0}
-          animationDuration={animationDuration}
-        />
-        <SectionNumbersBlock
-          number={10}
-          description="Average timeline for traditional transmission projects"
-          denominator="Years"
-          animationDelay={0}
-          animationDuration={animationDuration}
-        /> */}
+        {isDesktop && (
+          <>
+            {arrayTwo.map((nestedBlok) => (
+              <StoryblokServerComponent
+                blok={nestedBlok}
+                key={nestedBlok._uid}
+              />
+            ))}
+          </>
+        )}
+        {isMobile && (
+          <>
+            {arrayThree.map((nestedBlok) => (
+              <StoryblokServerComponent
+                blok={nestedBlok}
+                key={nestedBlok._uid}
+              />
+            ))}
+          </>
+        )}
       </div>
     </section>
   );
