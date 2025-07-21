@@ -1,0 +1,20 @@
+.blokSolutions
+  display: flex
+  align-items: flex-start
+  gap: 3rem
+  width: 100%
+  p, h3
+    color: var(--theme-type-secondary)
+    transition: color 0.33s ease-in-out
+  h3
+    width: 5.5em
+  & > div 
+    flex: 1
+    @media screen and (max-width: 770px)
+      flex: unset
+  &.active
+    p, h3
+      color: currentColor
+  @media screen and (max-width: 770px)
+    gap: 2rem
+    max-width: calc(100vw - 4 * var(--spacing-sides))
