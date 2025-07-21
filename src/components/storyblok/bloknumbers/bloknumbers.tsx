@@ -15,25 +15,18 @@ interface BlokNumbersProps {
 const BlokNumbers: React.FunctionComponent<BlokNumbersProps> = ({ blok }) => {
   const numericValue =
     typeof blok.number === 'string' ? parseFloat(blok.number) : blok.number;
-  const shouldAnimate =
-    typeof blok.number === 'number' ||
-    (numericValue !== undefined && !isNaN(numericValue));
 
   return (
     <div className={styles.block} {...storyblokEditable(blok)}>
-      <div className={styles.number_top}>
-        <div className={styles.number_top_left}>
-          {shouldAnimate ? (
-            <AnimatedNumber
-              targetValue={numericValue!}
-              duration={2000}
-              delay={0}
-            />
-          ) : (
-            <>{blok.number}</>
-          )}
+      <div className={`${styles.number_top} number_top`}>
+        <div className={`${styles.number_top_left} number_top_left`}>
+          <AnimatedNumber
+            targetValue={numericValue!}
+            duration={2000}
+            delay={0}
+          />
         </div>
-        <div className={styles.number_top_right}>
+        <div className={`${styles.number_top_right} number_top_right`}>
           <p>{blok.unit}</p>
         </div>
       </div>

@@ -7,6 +7,20 @@
   @media screen and (min-width: 1450px)
     flex: 1
 
+.columnOne
+  & > div
+    gap: 1.5rem
+    & > div 
+      &:first-child
+        span
+          font-size: 4.5rem
+      &:last-child
+        width: 100%
+        max-width: 20em
+        p
+          width: 100%
+          font-size: 1.5rem
+
 .columnTwo
   display: flex
   flex-wrap: wrap
