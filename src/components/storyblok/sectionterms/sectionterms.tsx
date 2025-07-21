@@ -5,7 +5,6 @@ import Markdown from '../../markdown/markdown';
 
 interface SectionTermsBlok extends SbBlokData {
   tag?: string;
-  title?: string;
   content?: string;
 }
 
@@ -24,9 +23,6 @@ const SectionTerms: React.FunctionComponent<SectionTermsProps> = ({ blok }) => {
       <div className={styles.sectionCounter}>
         <p>{blok.tag}</p>
         <SectionCounter />
-      </div>
-      <div className={styles.title}>
-        <h2>{blok.title}</h2>
       </div>
       <div className={styles.content}>
         {blok.content && <Markdown content={blok.content} />}
