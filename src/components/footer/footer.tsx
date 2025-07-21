@@ -6,15 +6,9 @@ import TimeDisplays from '@/components/time-displays/time-displays';
 import ScreenInfo from '@/components/screen-info';
 import ThemeIcon from '@/components/theme-icon/theme-icon';
 import Link from 'next/link';
-// import { useCallback } from 'react';
-// import { scrollToSection } from '@/utils/scrollToSection';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  // const handleScrollToSection = useCallback((sectionId: string) => {
-  //   scrollToSection(sectionId);
-  // }, []);
 
   return (
     <footer className={`${styles.footer} footer`} id="footer">
