@@ -5,6 +5,7 @@ import Logo from '@/components/icons/logo';
 import TimeDisplays from '@/components/time-displays/time-displays';
 import ScreenInfo from '@/components/screen-info';
 import ThemeIcon from '@/components/theme-icon/theme-icon';
+import Link from 'next/link';
 // import { useCallback } from 'react';
 // import { scrollToSection } from '@/utils/scrollToSection';
 
@@ -26,49 +27,19 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* <div className={`${styles.column} ${styles.columnTwo}`}>
+          <div className={`${styles.column} ${styles.columnTwo}`}>
             <div className={styles.columnTitle}>
               <p>Site</p>
             </div>
             <div className={styles.columnLinks}>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionIntro')}
-              >
-                About
-              </p>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionNumbers')}
-              >
-                Data
-              </p>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionProblems')}
-              >
-                Issues
-              </p>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionSolutions')}
-              >
-                Solutions
-              </p>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionOhio')}
-              >
-                Ohio
-              </p>
-              <p
-                className={styles.links}
-                onClick={() => handleScrollToSection('sectionMail')}
-              >
-                Join Us
-              </p>
+              <Link className={styles.links} href="/">
+                Home
+              </Link>
+              <Link className={styles.links} href="/terms">
+                Privacy Policy
+              </Link>
             </div>
-          </div> */}
+          </div>
 
           {/* <div className={styles.column}>
             <div className={styles.columnTitle}>

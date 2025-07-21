@@ -38,7 +38,10 @@ export const trackPageView = (url: string) => {
 };
 
 // Track custom events
-export const trackEvent = (eventName: string, parameters?: GtagEventParameters) => {
+export const trackEvent = (
+  eventName: string,
+  parameters?: GtagEventParameters
+) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, {
       ...parameters,

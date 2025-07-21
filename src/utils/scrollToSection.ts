@@ -6,8 +6,6 @@
 export const scrollToSection = (sectionId: string): void => {
   const targetSection = document.querySelector(`#${sectionId}`) as HTMLElement;
 
-  console.log(`Scrolling to section: ${sectionId}`, targetSection);
-
   if (targetSection) {
     // Get element's position relative to document
     const rect = targetSection.getBoundingClientRect();

@@ -19,7 +19,6 @@ interface SectionIssuesProps {
 const SectionIssues: React.FunctionComponent<SectionIssuesProps> = ({
   blok,
 }) => {
-  console.log('SectionIssues Blok:', blok);
   return (
     <section
       className={styles.sectionProblems}

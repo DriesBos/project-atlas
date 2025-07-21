@@ -10,10 +10,12 @@ export const useAnalytics = (pageName?: string) => {
     if (typeof window !== 'undefined') {
       const currentPath = window.location.pathname + window.location.search;
       trackPageView(currentPath);
-      
+
       // Optional: Log to console in development
       if (process.env.NODE_ENV === 'development') {
-        console.log(`Analytics: Page view tracked for ${pageName || currentPath}`);
+        console.log(
+          `Analytics: Page view tracked for ${pageName || currentPath}`
+        );
       }
     }
   }, [pageName]);
@@ -30,13 +32,14 @@ export const useScrollTracking = () => {
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = Math.round((scrollTop / docHeight) * 100);
 
-      scrollDepths.forEach(depth => {
+      scrollDepths.forEach((depth) => {
         if (scrollPercent >= depth && !trackedDepths.has(depth)) {
           trackedDepths.add(depth);
-          
+
           if (typeof window !== 'undefined' && window.gtag) {
             window.gtag('event', 'scroll', {
               event_category: 'engagement',
@@ -53,7 +56,7 @@ export const useScrollTracking = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

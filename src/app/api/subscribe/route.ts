@@ -20,13 +20,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Debug logging (remove in production)
-    console.log('Mailchimp Config:', {
-      server: MailchimpServer,
-      audienceId: MailchimpAudience,
-      keyLength: MailchimpKey?.length,
-    });
-
     const customUrl = `https://${MailchimpServer}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
 
     const response = await fetch(customUrl, {

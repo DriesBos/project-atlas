@@ -32,13 +32,6 @@ export const handler: Handler = async (event) => {
     }
 
     // Debug logging (remove in production)
-    console.log('Mailchimp Config:', {
-      server: MailchimpServer,
-      audienceId: MailchimpAudience,
-      keyLength: MailchimpKey?.length,
-      keyEndsWithDash: MailchimpKey?.includes('-'),
-      keyLastPart: MailchimpKey?.split('-').pop(),
-    });
 
     // Validate API key format
     if (!MailchimpKey.includes('-')) {
@@ -55,7 +48,6 @@ export const handler: Handler = async (event) => {
 
     // Use datacenter from API key instead of environment variable
     const customUrl = `https://${datacenter}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
-    console.log('Request URL:', customUrl);
 
     const response = await fetch(customUrl, {
       method: 'POST',
