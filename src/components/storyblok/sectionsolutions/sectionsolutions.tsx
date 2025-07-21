@@ -28,7 +28,7 @@ const SectionSolutions: React.FunctionComponent<SectionSolutionsProps> = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveRowIndex((prevIndex) => (prevIndex + 1) % totalRows);
-    }, 3000); // Change every 3 seconds
+    }, 2500); // Change every 2.5 seconds
 
     return () => clearInterval(interval);
   }, [totalRows]);

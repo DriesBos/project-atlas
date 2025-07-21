@@ -14,7 +14,6 @@ import StaggerAnimation from '@/components/stagger-animation';
 import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import Landing from '@/components/landing/landing';
-import SectionMail from '@/components/section-mail/section-mail';
 import FooterSpacer from '@/components/footer-spacer';
 
 const spaceMono = Space_Mono({
@@ -108,7 +107,6 @@ export default function RootLayout({
                 <Header />
                 <Landing />
                 {children}
-                <SectionMail />
                 <MainScrollTrigger />
               </main>
               <FooterSpacer />
