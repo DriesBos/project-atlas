@@ -14,7 +14,7 @@ import MainScrollTrigger from '@/components/main-scroll-trigger';
 import StaggerAnimation from '@/components/stagger-animation';
 import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
-import Landing from '@/components/landing/landing';
+import ConditionalLanding from '@/components/conditional-landing/conditional-landing';
 import FooterSpacer from '@/components/footer-spacer';
 
 const spaceMono = Space_Mono({
@@ -106,7 +106,7 @@ export default function RootLayout({
               <StaggerAnimation />
               <main>
                 <Header />
-                <Landing />
+                <ConditionalLanding />
                 {children}
                 <MainScrollTrigger />
               </main>
