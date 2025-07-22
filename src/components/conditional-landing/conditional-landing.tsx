@@ -1,13 +1,13 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Landing from '@/components/landing/landing';
+import SectionLanding from '@/components/storyblok/sectionlanding/sectionlanding';
 
 const ConditionalLanding: React.FunctionComponent = () => {
   const pathname = usePathname();
   const isHomePage = pathname === '/' || pathname === '';
 
-  return isHomePage ? <Landing /> : null;
+  return isHomePage ? <SectionLanding /> : null;
 };
 
 export default ConditionalLanding;
