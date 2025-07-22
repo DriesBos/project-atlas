@@ -29,15 +29,6 @@ exports.handler = async (event) => {
       };
     }
 
-    // Debug logging (remove in production)
-    console.log('Mailchimp Config:', {
-      server: MailchimpServer,
-      audienceId: MailchimpAudience,
-      keyLength: MailchimpKey?.length,
-      keyEndsWithDash: MailchimpKey?.includes('-'),
-      keyLastPart: MailchimpKey?.split('-').pop(),
-    });
-
     // Validate API key format
     if (!MailchimpKey.includes('-')) {
       console.error('Invalid API key format - missing datacenter');
