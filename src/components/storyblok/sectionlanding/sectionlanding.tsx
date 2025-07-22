@@ -21,12 +21,14 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const slideInterval = 1500; // 1.5 seconds
   const { globalData } = useGlobalData();
 
   useEffect(() => {
-    // Don't run slideshow if no blok or no images
-    if (!blok || !blok.images || blok.images.length === 0) return;
+    // Don't run slideshow if no blok or no images or images not loaded yet
+    if (!blok || !blok.images || blok.images.length === 0 || !imagesLoaded)
+      return;
 
     // Reset progress when slide changes
     setProgress(0);
@@ -50,11 +52,11 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
       clearInterval(progressInterval);
       clearTimeout(slideTimer);
     };
-  }, [currentImageIndex, blok]);
+  }, [currentImageIndex, blok, imagesLoaded]);
 
-  // Early return if blok is not available
+  // Don't render if no blok data
   if (!blok) {
-    return <div className={styles.placeholder}>loading</div>;
+    return null;
   }
 
   return (
@@ -95,6 +97,12 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                 className={index === currentImageIndex ? 'active' : ''}
+                onLoad={() => {
+                  // Only start slideshow when first image loads
+                  if (index === 0 && !imagesLoaded) {
+                    setImagesLoaded(true);
+                  }
+                }}
                 style={{
                   objectFit: 'cover',
                   opacity: index === currentImageIndex ? 1 : 0,
@@ -108,7 +116,7 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
             <p>No images available</p>
           </div>
         )}
-        {blok.images && blok.images.length > 0 && (
+        {blok.images && blok.images.length > 0 && imagesLoaded && (
           <div className={styles.progressIndicator}>
             <div
               className={styles.progressBar}
