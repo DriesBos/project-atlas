@@ -54,7 +54,7 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
 
   // Early return if blok is not available
   if (!blok) {
-    return <div>Loading...</div>;
+    return <div className={styles.placeholder}>loading</div>;
   }
 
   return (
