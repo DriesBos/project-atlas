@@ -1,0 +1,62 @@
+.sectionPartners
+  padding: var(--spacing-sections) 0
+  flex-direction: column
+  justify-content: flex-start
+
+.title
+  padding: 0 var(--spacing-sides)
+  h2
+    font-size: 2.5rem
+    max-width: 12em
+    line-height: 1.2
+    @media screen and (max-width: 1400px)
+      max-width: 7em
+      width: 100%
+
+.logos
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  width: 100%
+  overflow: hidden // Changed from overflow-x: auto to hidden for infinite scroll
+  padding-top: var(--spacing-sections)
+  .logosContainer
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    &.infiniteScroll
+      animation: scrollLeft 600s linear infinite
+  .logo
+    padding: 0 var(--spacing-sides)
+    border-right: var(--border)
+    flex-shrink: 0 // Prevent logos from shrinking
+    & > img 
+      height: 2rem
+      width: auto
+    &:last-child
+      border-right: none
+
+@keyframes scrollLeft
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-100%)
+  
+.sectionCounter
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 2rem
+  padding: 1rem var(--spacing-sides )
+  // Font
+  p
+    font-family: var(--font-space-mono), monospace
+    font-size: 0.75rem
+    color: var(--theme-type-secondary)
+    font-weight: 400
+    line-height: 1.4
+    text-transform: uppercase
