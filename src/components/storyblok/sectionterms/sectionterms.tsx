@@ -13,7 +13,6 @@ interface SectionTermsProps {
 }
 
 const SectionTerms: React.FunctionComponent<SectionTermsProps> = ({ blok }) => {
-  console.log('SectionTerms Blok:', blok);
   return (
     <section
       className={`${styles.sectionTerms} animateSectionBlock`}

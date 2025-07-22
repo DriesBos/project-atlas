@@ -13,8 +13,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { globalData } = useGlobalData();
 
-  console.log('Footer globalData:', globalData);
-
   return (
     <footer className={`${styles.footer} footer`} id="footer">
       <div className={styles.container_top}>
