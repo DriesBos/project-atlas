@@ -112,7 +112,6 @@ export default async function RootLayout({
                 <StaggerAnimation />
                 <main>
                   <Header />
-                  <ConditionalLanding />
                   {children}
                   <MainScrollTrigger />
                 </main>
