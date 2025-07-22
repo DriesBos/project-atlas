@@ -14,7 +14,6 @@ import MainScrollTrigger from '@/components/main-scroll-trigger';
 import StaggerAnimation from '@/components/stagger-animation';
 import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
-import ConditionalLanding from '@/components/conditional-landing/conditional-landing';
 import FooterSpacer from '@/components/footer-spacer';
 import { GlobalDataProvider } from '@/providers/global-data-provider';
 import { fetchGlobalData } from '@/utils/fetchGlobalData';
