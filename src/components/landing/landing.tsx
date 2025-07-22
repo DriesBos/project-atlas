@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from './landing.module.sass';
 import LogoName from '@/components/icons/logo-name';
 import { SectionCounter } from '@/components/section-counter';
+import { useGlobalData } from '@/providers/global-data-provider';
 
 const images = [
   '/slideshow/one.jpg',
@@ -19,6 +20,7 @@ const Landing = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const slideInterval = 1500; // 1.5 seconds
+  const { globalData } = useGlobalData();
 
   useEffect(() => {
     // Reset progress when slide changes
@@ -48,7 +50,7 @@ const Landing = () => {
   return (
     <section className={`${styles.landing} animateSectionBlock`}>
       <div className={styles.sectionCounter}>
-        <p>American Transmission</p>
+        <p>{globalData.companyname}</p>
         <SectionCounter />
       </div>
       <div className={styles.circleContainer}>

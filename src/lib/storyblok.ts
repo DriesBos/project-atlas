@@ -12,6 +12,7 @@ import SectionOhio from '@/components/storyblok/sectionohio/sectionohio';
 import BlokOhio from '@/components/storyblok/blokohio/blokohio';
 import SectionMail from '@/components/storyblok/sectionmail/sectionmail';
 import SectionTerms from '@/components/storyblok/sectionterms/sectionterms';
+import GlobalData from '@/components/storyblok/globaldata/globaldata';
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN || 'demo-token',
@@ -28,6 +29,7 @@ export const getStoryblokApi = storyblokInit({
     bloktext: BlokText,
     bloksolutions: BlokSolutions,
     blokohio: BlokOhio,
+    globaldata: GlobalData,
   },
   use: [apiPlugin],
   apiOptions: {

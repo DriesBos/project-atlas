@@ -68,7 +68,7 @@ export default function TimeDisplays({ className }: TimeDisplaysProps) {
   return (
     <div className={className}>
       <p>
-        {userTime && userLocation && `${userTime} ${userLocation}`} ——{' '}
+        {userTime && userLocation && `${userTime} ${userLocation}`} —{' '}
         {ohioTime && `${ohioTime} Ohio`}
       </p>
     </div>

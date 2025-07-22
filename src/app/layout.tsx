@@ -16,6 +16,8 @@ import { SectionCounterProvider } from '@/components/section-counter';
 import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import ConditionalLanding from '@/components/conditional-landing/conditional-landing';
 import FooterSpacer from '@/components/footer-spacer';
+import { GlobalDataProvider } from '@/providers/global-data-provider';
+import { fetchGlobalData } from '@/utils/fetchGlobalData';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -89,31 +91,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Fetch global data on the server
+  const globalData = await fetchGlobalData('published');
+
   return (
     <html lang="en">
       <StoryblokProvider>
         <ThemeStoreProvider>
           <SectionCounterProvider>
-            <body
-              className={`${roopert.variable} ${spaceMono.variable} ${teetee.variable}`}
-            >
-              <ScrollReset />
-              <StaggerAnimation />
-              <main>
-                <Header />
-                <ConditionalLanding />
-                {children}
-                <MainScrollTrigger />
-              </main>
-              <FooterSpacer />
-              <Footer />
-              <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
-            </body>
+            <GlobalDataProvider initialData={globalData}>
+              <body
+                className={`${roopert.variable} ${spaceMono.variable} ${teetee.variable}`}
+              >
+                <ScrollReset />
+                <StaggerAnimation />
+                <main>
+                  <Header />
+                  <ConditionalLanding />
+                  {children}
+                  <MainScrollTrigger />
+                </main>
+                <FooterSpacer />
+                <Footer />
+                <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+              </body>
+            </GlobalDataProvider>
           </SectionCounterProvider>
         </ThemeStoreProvider>
       </StoryblokProvider>
