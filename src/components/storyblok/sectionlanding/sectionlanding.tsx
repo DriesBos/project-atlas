@@ -92,7 +92,7 @@ const SectionLanding: React.FunctionComponent<SectionLandingProps> = ({
                 alt={imageAlt}
                 fill
                 sizes="100vw"
-                quality={85}
+                quality={75}
                 priority={index === 0} // Only prioritize the first image
                 loading={index === 0 ? 'eager' : 'lazy'}
                 placeholder="blur"
