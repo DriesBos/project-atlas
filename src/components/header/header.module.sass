@@ -76,6 +76,13 @@
 .logo
   flex-grow: 1
 
+.toggle
+  svg
+    transition: transform var(--transition-general)
+  &[data-active='true']
+    svg
+      transform: rotate(-135deg)
+
 .themeIcon
   @media screen and ( max-width: 550px)
     display: none !important

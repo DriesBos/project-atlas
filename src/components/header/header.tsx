@@ -74,7 +74,11 @@ const Header = ({}) => {
             <Logo />
           </Link>
         </li>
-        <li className={styles.toggle} onClick={handleToggleClick}>
+        <li
+          className={styles.toggle}
+          data-active={headerActive}
+          onClick={handleToggleClick}
+        >
           <IconPlus />
         </li>
       </ul>
