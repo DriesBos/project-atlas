@@ -70,6 +70,7 @@
   flex-wrap: wrap
   width: 100%
   transition: height var(--transition-general), border-bottom var(--transition-general)
+  will-change: height, border-bottom
   li:nth-last-child(2)
     flex-grow: 1
     justify-content: flex-start
@@ -81,6 +82,7 @@
 .toggle
   svg
     transition: transform var(--transition-general)
+    will-change: transform
   &[data-active='true']
     svg
       transform: rotate(-90deg)
