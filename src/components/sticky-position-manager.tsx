@@ -45,26 +45,42 @@ const manageStickyPositioning = (): void => {
  */
 const StickyPositionManager = () => {
   useEffect(() => {
-    // Function to handle positioning with a small delay to ensure DOM is ready
+    // Disable scrolling during initialization
+    const disableScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    // Re-enable scrolling after initialization
+    const enableScroll = () => {
+      document.body.style.overflow = '';
+    };
+
+    // Function to handle positioning with scroll protection
     const handlePositioning = () => {
+      disableScroll();
+
       setTimeout(() => {
         manageStickyPositioning();
-      }, 100);
+        enableScroll();
+      }, 150); // Slightly longer delay to ensure DOM is stable
     };
 
     // Run on initial mount
     handlePositioning();
 
-    // Handle window resize
+    // Handle window resize (no scroll disable needed for resize)
     const handleResize = () => {
-      handlePositioning();
+      setTimeout(() => {
+        manageStickyPositioning();
+      }, 100);
     };
 
     window.addEventListener('resize', handleResize);
 
-    // Cleanup event listener
+    // Cleanup event listener and ensure scroll is re-enabled
     return () => {
       window.removeEventListener('resize', handleResize);
+      enableScroll();
     };
   }, []);
 
