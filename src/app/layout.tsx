@@ -18,6 +18,7 @@ import FooterSpacer from '@/components/footer-spacer';
 import { GlobalDataProvider } from '@/providers/global-data-provider';
 import { fetchGlobalData } from '@/utils/fetchGlobalData';
 import SectionPositionInitializer from '@/components/section-position-initializer';
+import StickyPositionManager from '@/components/sticky-position-manager';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -109,6 +110,7 @@ export default async function RootLayout({
                 className={`${roopert.variable} ${spaceMono.variable} ${teetee.variable}`}
               >
                 <SectionPositionInitializer />
+                <StickyPositionManager />
                 <ScrollReset />
                 <StaggerAnimation />
                 <main>
