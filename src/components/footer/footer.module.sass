@@ -40,16 +40,6 @@
       user-select: none
       color: currentColor
       height: 100%
-      &:last-child
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-shrink: 0
-        width: 3.125rem
-        padding: 0
-        border-left: var(--border)
-        @media screen and (max-width: 770px)
-          width: 4rem
     @media screen and ( max-width: 770px)
       gap: 1rem
   @media screen and ( max-width: 770px)
@@ -123,4 +113,23 @@
 
 .copyright, .userinfoContainer, .screenres
   flex-grow: 1
+
+.icons
+  display: flex
+  flex-direction: row
+.themeIcon, .scrollUpIcon
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  width: 3.125rem
+  padding: 0
+  border-left: var(--border)
+  cursor: pointer
+  img, svg
+    height: var(--icon-size)
+    width: auto
+    user-select: none
+  @media screen and (max-width: 770px)
+    width: 4rem
 

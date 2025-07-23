@@ -8,10 +8,18 @@ import ThemeIcon from '@/components/theme-icon/theme-icon';
 import Link from 'next/link';
 import { useGlobalData } from '@/providers/global-data-provider';
 import Markdown from '../markdown/markdown';
+import IconUp from '@/components/icons/icon-up';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { globalData } = useGlobalData();
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <footer className={`${styles.footer} footer`} id="footer">
@@ -88,9 +96,14 @@ const Footer = () => {
           <li className={styles.screenres}>
             <ScreenInfo />
           </li>
-          <li className={styles.themeIcon}>
-            <ThemeIcon />
-          </li>
+          <div className={styles.icons}>
+            <li className={styles.scrollUpIcon} onClick={handleScrollToTop}>
+              <IconUp />
+            </li>
+            <li className={styles.themeIcon}>
+              <ThemeIcon />
+            </li>
+          </div>
         </ul>
       </div>
     </footer>
