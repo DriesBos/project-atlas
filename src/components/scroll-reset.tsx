@@ -12,6 +12,13 @@ export default function ScrollReset() {
       history.scrollRestoration = 'manual';
     }
 
+    // CSS-based iOS Safari fixes
+    document.body.style.setProperty('-webkit-overflow-scrolling', 'auto');
+    document.documentElement.style.setProperty(
+      '-webkit-overflow-scrolling',
+      'auto'
+    );
+
     // Function to reset scroll positions with multiple methods
     const resetScrollPositions = () => {
       // Method 1: Force documentElement scroll first
@@ -39,6 +46,19 @@ export default function ScrollReset() {
       document.body.scrollTop = 0;
     };
 
+    // Event-based resets for iOS Safari
+    const handleLoad = () => {
+      requestAnimationFrame(resetScrollPositions);
+    };
+
+    const handleDOMContentLoaded = () => {
+      requestAnimationFrame(resetScrollPositions);
+    };
+
+    // Add event listeners
+    window.addEventListener('load', handleLoad);
+    document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+
     // Immediate reset with requestAnimationFrame wrapper
     requestAnimationFrame(() => {
       resetScrollPositions();
@@ -59,9 +79,16 @@ export default function ScrollReset() {
       }, 300),
     ];
 
-    // Cleanup timeouts on unmount
+    // Cleanup timeouts and event listeners on unmount
     return () => {
       timeouts.forEach((timeout) => clearTimeout(timeout));
+      window.removeEventListener('load', handleLoad);
+      document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
+      // Restore webkit overflow scrolling
+      document.body.style.removeProperty('-webkit-overflow-scrolling');
+      document.documentElement.style.removeProperty(
+        '-webkit-overflow-scrolling'
+      );
     };
   }, [pathname]); // Re-run when pathname changes (route changes)
 
