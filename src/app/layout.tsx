@@ -17,6 +17,7 @@ import { ThemeStoreProvider } from '@/providers/theme-store-provider';
 import FooterSpacer from '@/components/footer-spacer';
 import { GlobalDataProvider } from '@/providers/global-data-provider';
 import { fetchGlobalData } from '@/utils/fetchGlobalData';
+import SectionPositionInitializer from '@/components/section-position-initializer';
 
 const spaceMono = Space_Mono({
   weight: '400',
@@ -107,6 +108,7 @@ export default async function RootLayout({
               <body
                 className={`${roopert.variable} ${spaceMono.variable} ${teetee.variable}`}
               >
+                <SectionPositionInitializer />
                 <ScrollReset />
                 <StaggerAnimation />
                 <main>
