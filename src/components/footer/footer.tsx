@@ -19,7 +19,7 @@ const Footer = () => {
         <div className={styles.content}>
           <div className={`${styles.columnOne} ${styles.column}`}>
             <Logo />
-            <p className={styles.description}>{globalData.slogan}</p>
+            <h2 className={styles.description}>{globalData.slogan}</h2>
           </div>
 
           <div className={`${styles.column} ${styles.columnTwo}`}>

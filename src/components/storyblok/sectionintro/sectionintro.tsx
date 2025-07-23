@@ -34,7 +34,7 @@ const SectionIntro: React.FunctionComponent<SectionIntroProps> = ({ blok }) => {
       </div>
 
       <div className={styles.slogan}>
-        <h2>{blok.title}</h2>
+        <h1>{blok.title}</h1>
       </div>
 
       <div className={styles.textContainer}>

@@ -7,8 +7,8 @@
   flex-direction: column
   justify-content: flex-end
   z-index: var(--z-footer)
-  p, li, a, h1, h2, h3
-    font-size: 0.75rem
+  p, li, a
+    font-size: var(--font-mono)
     line-height: 1.4
     text-transform: uppercase
     letter-spacing: 0.05em
@@ -100,10 +100,8 @@
     user-select: none
     @media screen and ( max-width: 770px)
       flex-shrink: 0
-  p
-    font-size: 1.25rem
+  p, h1, h2
     color: var(--theme-type-secondary)
-    font-weight: 600
     max-width: 12em
     text-transform: unset
     @media screen and ( max-width: 770px)
@@ -116,7 +114,7 @@
 .links
   text-decoration: none
   cursor: pointer
-  font-size: 0.75rem !important
+  font-size: var(--font-mono) !important
   &:hover
     text-decoration: underline
 

@@ -27,7 +27,7 @@ const SectionMail: React.FunctionComponent<SectionMailProps> = ({ blok }) => {
         <h2>Join Us</h2>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
-        <h2>{blok.title}</h2>
+        <h1>{blok.title}</h1>
         <Subscribe />
       </div>
     </section>

@@ -30,7 +30,7 @@ const SectionIssues: React.FunctionComponent<SectionIssuesProps> = ({
         <SectionCounter />
       </div>
       <div className={`${styles.column} ${styles.columnOne}`}>
-        <h2>{blok.title}</h2>
+        <h1>{blok.title}</h1>
       </div>
       <div className={`${styles.column} ${styles.columnTwo}`}>
         {blok.body?.map((nestedBlok, index) => (
