@@ -11,9 +11,10 @@
       gap: 1rem
       &_left
         span
-          font-size: 3rem
+          font-size: var(--font-heading)
           font-family: var(--font-space-mono), monospace
           line-height: 1
+          color: var(--theme-type-secondary)
       &_right
         p
           margin-top: .38em
@@ -22,7 +23,7 @@
           font-size: var(--font-mono)
           text-transform: uppercase
     &_bottom
-      font-size: 1rem
+      font-size: var(--font-paragraph)
       max-width: 16em
       @media screen and (max-width: 575px)
         max-width: 20em
@@ -34,6 +35,6 @@
         &_top
           &_left
             span
-              font-size: 4.5rem
+              font-size: var(--scale-five)
         &_bottom
-          font-size: 1.5rem
+          font-size: var(--font-subheading)
