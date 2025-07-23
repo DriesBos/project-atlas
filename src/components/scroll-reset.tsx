@@ -7,31 +7,62 @@ export default function ScrollReset() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Function to reset scroll positions
+    // Disable browser scroll restoration (iOS Safari fix)
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Function to reset scroll positions with multiple methods
     const resetScrollPositions = () => {
-      // Reset window scroll position
+      // Method 1: Force documentElement scroll first
+      document.documentElement.scrollTop = 0;
+      document.documentElement.scrollLeft = 0;
+
+      // Method 2: Window scroll with instant behavior
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
+
+      // Method 3: Fallback window scroll
       window.scrollTo(0, 0);
 
-      // Reset scroll position of main tag if it exists
+      // Method 4: Reset main element scroll
       const mainElement = document.querySelector('main');
       if (mainElement) {
         mainElement.scrollTop = 0;
         mainElement.scrollLeft = 0;
       }
 
-      // Also reset body scroll as a fallback
+      // Method 5: Body scroll reset as fallback
       document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
     };
 
-    // Reset immediately
-    resetScrollPositions();
+    // Immediate reset with requestAnimationFrame wrapper
+    requestAnimationFrame(() => {
+      resetScrollPositions();
+    });
 
-    // Also reset after a short delay to ensure DOM is fully loaded
-    const timeoutId = setTimeout(resetScrollPositions, 100);
+    // Multiple delayed resets for iOS Safari (option 2)
+    const timeouts = [
+      setTimeout(() => {
+        requestAnimationFrame(resetScrollPositions);
+      }, 100),
 
-    // Cleanup timeout on unmount
-    return () => clearTimeout(timeoutId);
+      setTimeout(() => {
+        requestAnimationFrame(resetScrollPositions);
+      }, 200),
+
+      setTimeout(() => {
+        requestAnimationFrame(resetScrollPositions);
+      }, 300),
+    ];
+
+    // Cleanup timeouts on unmount
+    return () => {
+      timeouts.forEach((timeout) => clearTimeout(timeout));
+    };
   }, [pathname]); // Re-run when pathname changes (route changes)
 
   return null; // This component doesn't render anything
