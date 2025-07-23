@@ -47,14 +47,14 @@ const Footer = () => {
                   target="_blank"
                   href={`${globalData.linkedin}`}
                 >
-                  {globalData.linkedin}
+                  LinkedIn
                 </a>
                 <a
                   className={styles.links}
                   target="_blank"
                   href={`${globalData.twitter}`}
                 >
-                  {globalData.twitter}
+                  Twitter
                 </a>
               </div>
             </div>
