@@ -48,49 +48,59 @@ const teetee = localFont({
   variable: '--font-teetee',
 });
 
-export const metadata: Metadata = {
-  title: 'American Transmission',
-  description: 'Powering the New American Industrial Base.',
-  openGraph: {
-    title: 'American Transmission',
-    description: 'Powering the New American Industrial Base.',
-    images: [
-      {
-        url: 'https://project-atlas-prototype.netlify.app//ogimage.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'American Transmission - Powering the New American Industrial Base.',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'American Transmission',
-    description: 'Powering the New American Industrial Base.',
-    images: ['https://project-atlas-prototype.netlify.app//ogimage.jpg'],
-  },
-  appleWebApp: {
-    title: 'ATLAS',
-    statusBarStyle: 'black-translucent',
-  },
-  icons: {
-    icon: [
-      {
-        media: '(prefers-color-scheme: light)',
-        url: '/favicon/favicon-light.ico',
-        href: '/favicon/favicon-light.ico',
-        type: 'image/x-icon',
-      },
-      {
-        media: '(prefers-color-scheme: dark)',
-        url: '/favicon/favicon.ico',
-        href: '/favicon/favicon-dark.ico',
-        type: 'image/x-icon',
-      },
-    ],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  // Fetch global data for dynamic metadata
+  const globalData = await fetchGlobalData('published');
+
+  return {
+    title: globalData.companyname || 'American Transmission',
+    description:
+      globalData.slogan || 'Powering the New American Industrial Base.',
+    openGraph: {
+      title: globalData.companyname || 'American Transmission',
+      description:
+        globalData.slogan || 'Powering the New American Industrial Base.',
+      images: [
+        {
+          url: 'https://project-atlas-prototype.netlify.app//ogimage.jpg',
+          width: 1200,
+          height: 630,
+          alt: `${globalData.companyname || 'American Transmission'} - ${
+            globalData.slogan || 'Powering the New American Industrial Base.'
+          }`,
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: globalData.companyname || 'American Transmission',
+      description:
+        globalData.slogan || 'Powering the New American Industrial Base.',
+      images: ['https://project-atlas-prototype.netlify.app//ogimage.jpg'],
+    },
+    appleWebApp: {
+      title: 'ATLAS',
+      statusBarStyle: 'black-translucent',
+    },
+    icons: {
+      icon: [
+        {
+          media: '(prefers-color-scheme: light)',
+          url: '/favicon/favicon-light.ico',
+          href: '/favicon/favicon-light.ico',
+          type: 'image/x-icon',
+        },
+        {
+          media: '(prefers-color-scheme: dark)',
+          url: '/favicon/favicon.ico',
+          href: '/favicon/favicon-dark.ico',
+          type: 'image/x-icon',
+        },
+      ],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
